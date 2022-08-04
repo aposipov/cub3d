@@ -26,6 +26,8 @@ test for minilibx
 ```
 cd test && gcc main.c -lmlx -lXext -lX11 -o test1 && gcc new_win.c -lmlx -lXext -lX11 -o test2
 ```  
+-lmlx -lXext -lX11 flags!  
+  
 </details>
   
 thank you! ⭐
