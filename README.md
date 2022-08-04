@@ -1,17 +1,18 @@
 # cub3d
 
-## Install minilibx
+### Install minilibx
 [MiniLibX from Paris students](https://github.com/42Paris/minilibx-linux)  
 ```
 git clone https://github.com/42Paris/minilibx-linux.git && cd minilibx-linux && make
 ```
+Manual install on Linux  
 install libmlx.a
 ```
-sudo cp test1.txt /usr/local/lib 
+sudo cp libmlx.a /usr/local/lib 
 ```
 install mlx.h and mlx_int.h
 ```
-sudo cp test1.txt /usr/local/include/test/
+sudo mkdir /usr/local/include/mlx/ && sudo cp mlx.h mlx_int.h /usr/local/include/mlx/
 ```
 install man file
 ```
