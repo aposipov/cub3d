@@ -35,5 +35,6 @@ cd test && gcc main.c -lmlx -lXext -lX11 -o test1 && gcc new_win.c -lmlx -lXext 
   
 thank you! ⭐  
   
+  
 ### usefull links  
 [Lode's Computer Graphics Tutorial](https://lodev.org/cgtutor/raycasting.html)
