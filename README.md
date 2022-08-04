@@ -27,7 +27,7 @@ test for minilibx
 cd test && gcc main.c -lmlx -lXext -lX11 -o test1 && gcc new_win.c -lmlx -lXext -lX11 -o test2
 ```  
 correct compile flags  
-`gcc/clang -Wall -Wextra -Werror main.c/main.o -lmlx -lXext -lX11 flags! -o start`  
+`gcc/clang -Wall -Wextra -Werror main.c/main.o -lmlx -lXext -lX11 -o start`  
   
 </details>
 <details>
