@@ -29,5 +29,8 @@ cd test && gcc main.c -lmlx -lXext -lX11 -o test1 && gcc new_win.c -lmlx -lXext 
 -lmlx -lXext -lX11 flags!  
   
 </details>
-<details><><summary>not install</summary> </details>
+<details>
+<summary>not install</summary>
+</details>
+  
 thank you! ⭐
