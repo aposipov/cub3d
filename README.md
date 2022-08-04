@@ -14,7 +14,7 @@ install mlx.h and mlx_int.h
 ```
 sudo mkdir /usr/local/include/mlx/ && sudo cp mlx.h mlx_int.h /usr/local/include/mlx/
 ```
-install man file
+install man1 and man3 file
 ```
-sudo cp test_man/ /usr/local/
+sudo cp man/ /usr/local/
 ```
