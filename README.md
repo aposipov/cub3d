@@ -22,6 +22,10 @@ install man1 and man3 file
 ```
 sudo cp man/ /usr/local/
 ```   
-
+test for minilibx  
+```
+cd test && gcc main.c -lmlx -lXext -lX11 -o test1 && gcc new_win.c -lmlx -lXext -lX11 -o test2
+```  
 </details>
+  
 thank you! ⭐
