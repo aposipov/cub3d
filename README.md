@@ -32,12 +32,13 @@ correct compile flags
 `gcc/clang -Wall -Wextra -Werror main.c/main.o -lmlx -lXext -lX11 -o start`  
   
 </details>
+  
 <details>
 <summary>launch in direcory</summary>
 <br>
 in file edit "../mlx/mlx.h" <- path to mlx.h  
   
-gcc test.c -L ../[Path to libmlx.a] -lmlx -lXext -lX11  
+`gcc test.c -L ../[Path to libmlx.a] -lmlx -lXext -lX11`  
 </details>
   
 thank you! ⭐  
