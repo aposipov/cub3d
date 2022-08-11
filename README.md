@@ -1,8 +1,8 @@
 # cub3d
 
-### Install minilibx on linux
+### install minilibx on linux or launch in directory
 <details>
-<summary>Guide</summary>  
+<summary>install guide</summary>  
 <br>
   
 [MiniLibX from Paris students](https://github.com/42Paris/minilibx-linux)  
