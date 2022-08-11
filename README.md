@@ -33,7 +33,11 @@ correct compile flags
   
 </details>
 <details>
-<summary>not install</summary>
+<summary>launch in direcory</summary>
+  
+in file edit "../mlx/mlx.h" <- path to mlx.h  
+  
+gcc test.c -L ../[Path to libmlx.a] -lmlx -lXext -lX11  
 </details>
   
 thank you! ⭐  
