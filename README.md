@@ -22,7 +22,7 @@ install man1 and man3 file
 ```
 sudo cp man/ /usr/local/
 ```   
-edit header in file, example "mlx/mlx.h" <- your mlx.h path  
+edit header in file, example <mlx/mlx.h> <- your mlx.h path  
 test for minilibx  
 ```
 cd test && gcc main.c -lmlx -lXext -lX11 -o test1 && gcc new_win.c -lmlx -lXext -lX11 -o test2
