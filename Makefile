@@ -10,25 +10,16 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 		minishell
+NAME =		cub3d
 LIBFT_A = 	libft/libft.a
 CC = 		gcc
-CFLAGS = 	-Wall -Wextra -Werror
-RLFLAG =	-lreadline
-INCFLAG = 	-I ./inc/\
- 			-I ./libft/inc
+WFLAGS = 	-Wall -Wextra -Werror
+MLXFLAG =	-lmlx -lX11 -lXext
+INCFLAG = 	-I ./inc/ -I ./libft/inc
 HEADER = 	./inc/
 
-SRC = 		src/main.c\
-			src/init/signals.c\
-            src/parser/pre_parsing.c src/parser/parsing.c src/parser/pipe_redirect.c\
-            src/parser/limiter.c src/parser/post_parser.c src/parser/dollar.c\
-            src/utils/cleaning.c src/utils/srt_cmd.c src/utils/support.c src/utils/utils.c\
-            src/env/export_env.c src/env/init_env.c src/env/u_env.c\
-            src/pipe/pipes.c src/pipe/u_pipes.c\
-            src/exec/exec.c src/exec/cmd_arr.c\
-            src/cmd/cd.c src/cmd/echo.c src/cmd/env.c\
-            src/cmd/exit.c src/cmd/export.c src/cmd/pwd.c src/cmd/unset.c
+SRC =		src/main.c\
+			src/gnl/get_next_line.c src/gnl/get_next_line_utils.c\
 
 OBJ = 		$(patsubst %.c, %.o, $(SRC))
 
@@ -41,14 +32,14 @@ NC= \033[0;0m
 all:		$(LIBFT_A) $(NAME)
 
 $(NAME):	$(OBJ)
-			$(CC) $(CFLAGS) $(OBJ) $(LIBFT_A) $(RLFLAG) -o $(NAME)
-			@echo -e "$(GREEN)\t\n Minishel compiled!\n $(NC)"
+			$(CC) $(WFLAGS) $(OBJ) $(LIBFT_A) $(MLXFLAG) -o $(NAME)
+			@echo -e "$(GREEN)\t\n cub3d compiled!\n $(NC)"
 
 $(LIBFT_A):
 			make -C libft/
 
 %.o : %.c 	Makefile $(HEADER)
-			$(CC) $(INCFLAG) $(CFLAGS) -c $< -o $@
+			$(CC) $(INCFLAG) $(WFLAGS) -c $< -o $@
 
 clean:
 			make -C libft clean
