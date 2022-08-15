@@ -45,5 +45,7 @@ in file edit "../mlx/mlx.h" <- path to mlx.h
 thank you! ⭐  
   
   
-### usefull links  
+### usefull links
+[video mvenmo part1](https://www.youtube.com/watch?v=Ui7qFpeqa3c&t=0s)  
+[video mvenmo part2](https://www.youtube.com/watch?v=XWCHl0rpBj4&t=0s)  
 [Lode's Computer Graphics Tutorial](https://lodev.org/cgtutor/raycasting.html)
