@@ -33,10 +33,18 @@ static void check_path(char const *path)
 
 int main(int argc, char **argv)
 {
+	//t_all	*cub;
+	void *mlx;
+	void *win;
+
 	if (argc == 2)
 	{
 		check_path(argv[1]);
-
+		mlx = mlx_init();
+		win = mlx_new_window(mlx, W_WIDTH, W_HEIGHT, "cub3d");
+		sleep(10);
+		mlx_destroy_window(mlx, win);
+		mlx_loop(mlx);
 	}
 	else
 	{

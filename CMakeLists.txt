@@ -9,7 +9,7 @@ add_subdirectory(./libft)
 
 add_executable(cub3d src/main.c
 		src/gnl/get_next_line.c
-		src/gnl/get_next_line_utils.c)
+		src/gnl/get_next_line_utils.c inc/cub3d_structs.h inc/cub3d_defines.h)
 
 #set(CMAKE_C_FLAGS  "-lreadline")
 
