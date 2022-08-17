@@ -11,6 +11,8 @@ add_executable(cub3d src/main.c
 		src/gnl/get_next_line.c
 		src/gnl/get_next_line_utils.c inc/cub3d_structs.h inc/cub3d_defines.h)
 
-#set(CMAKE_C_FLAGS  "-lreadline")
+set(CMAKE_C_FLAGS  "-lmlx -lXext -lX11")
+set(CMAKE_C_FLAGS_INIT "-Wall -Werror -Wextra")
 
-target_link_libraries(cub3d libft)
+target_link_libraries(cub3d libft
+		/usr/local/lib/libmlx.a)
