@@ -12,4 +12,11 @@
 # include "cub3d_structs.h"
 # include "cub3d_defines.h"
 
-#endif //CUB3D_CUB3D_H
+void	init_data(t_all *game);
+void	init_mlx(t_all *game);
+void	init_hooks(t_all *game);
+
+int key_hook(int key);
+int ft_close(void);
+
+#endif

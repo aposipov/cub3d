@@ -8,8 +8,8 @@ include_directories(./libft/inc)
 add_subdirectory(./libft)
 
 add_executable(cub3d src/main.c
-		src/gnl/get_next_line.c
-		src/gnl/get_next_line_utils.c inc/cub3d_structs.h inc/cub3d_defines.h)
+		src/gnl/get_next_line.c src/gnl/get_next_line_utils.c
+		src/init.c)
 
 set(CMAKE_C_FLAGS  "-lmlx -lXext -lX11")
 set(CMAKE_C_FLAGS_INIT "-Wall -Werror -Wextra")

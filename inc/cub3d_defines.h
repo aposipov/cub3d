@@ -1,6 +1,4 @@
-//
-// Created by user on 15.08.22.
-//
+
 
 #ifndef CUB3D_CUB3D_DEFINES_H
 # define CUB3D_CUB3D_DEFINES_H
@@ -19,8 +17,8 @@
 # define KEY_ENTER			65293
 
 # define CEL_SIZE 6
-# define W_WIDTH 1000
-# define W_HEIGHT 600
+# define W_WIDTH 1280
+# define W_HEIGHT 720
 # define TEX_WIDTH 64.
 # define TEX_HEIGHT 64.
 

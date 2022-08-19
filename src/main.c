@@ -4,6 +4,19 @@
 
 #include "cub3d.h"
 
+int ft_close(void) // ?
+{
+	exit(0);
+}
+
+int key_hook(int key)
+{
+	if (key == KEY_ESC)
+		ft_close();
+	printf("key = %d\n", key);
+	return (0);
+}
+
 static void open_path(char const *path)
 {
 	int fd;
@@ -33,18 +46,17 @@ static void check_path(char const *path)
 
 int main(int argc, char **argv)
 {
-	//t_all	*cub;
-	void *mlx;
-	void *win;
+	t_all game;
 
 	if (argc == 2)
 	{
 		check_path(argv[1]);
-		mlx = mlx_init();
-		win = mlx_new_window(mlx, W_WIDTH, W_HEIGHT, "cub3d");
-		sleep(10);
-		mlx_destroy_window(mlx, win);
-		mlx_loop(mlx);
+		init_data(&game);
+//		pars_data(&game, argv[1]);
+		init_mlx(&game);
+		init_hooks(&game);
+		//mlx_loop_hook(all.mlx.mlx, draw_cub, &all);
+		mlx_loop(game.mlx);
 	}
 	else
 	{
