@@ -21,9 +21,7 @@ void	draw_fc(t_all *game)
 	game->map.ceiling = 16711680;
 	game->map.floor = 16776960;
 
-	game->img.addr = malloc(sizeof(char) * 3);
-	if(!game->img.addr)
-		printf("addr failed\n");
+
 
 	x = -1;
 	while (++x < W_WIDTH)
@@ -41,8 +39,14 @@ void	draw_fc(t_all *game)
 
 void	game_start(t_all *game)
 {
+	game->img.addr = malloc(sizeof(char) * 3);
+	if(!game->img.addr)
+		printf("addr failed\n");
+
+	//malloc?
 	draw_fc(game);
 	//draw_raycasting(all);
 	//draw_mini_map(all);
-	//mlx_put_image_to_window(all->mlx.mlx, all->mlx.win, all->mlx.img, 0, 0);
+	mlx_put_image_to_window(game->mlx, game->win, game->img.img, 0, 0);
+	// sigsegv
 }
