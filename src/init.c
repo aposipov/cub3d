@@ -22,5 +22,7 @@ void	init_hooks(t_all *game)
 {
 	mlx_key_hook(game->win, key_hook, &game);
 	mlx_mouse_hook(game->win, key_hook, &game); // ? move l r
+	mlx_mouse_show(game->mlx, game->win); // for what
+	mlx_mouse_move(game->mlx, game->win, 300,300); // for what
 	mlx_hook(game->win, 17, 0, ft_close, 0); // ? &game
 }
