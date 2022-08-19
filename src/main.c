@@ -55,7 +55,8 @@ int main(int argc, char **argv)
 //		pars_data(&game, argv[1]);
 		init_mlx(&game);
 		init_hooks(&game);
-		//mlx_loop_hook(all.mlx.mlx, draw_cub, &all);
+		game_start(&game); // not draw c or f
+		//mlx_loop_hook(all.mlx.mlx, draw_cub, &all); // loop or not ?
 		mlx_loop(game.mlx);
 	}
 	else

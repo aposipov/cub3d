@@ -7,7 +7,8 @@
 void	init_data(t_all *game)
 {
 	// null data
-	(void)game;
+	game->map.ceiling = -1;
+	game->map.floor = -1;
 	printf("*** init data ***\n");
 }
 

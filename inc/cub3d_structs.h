@@ -14,11 +14,26 @@ typedef struct s_data
 	int		endian;
 }	t_data;
 
+typedef struct s_map
+{
+	char	**map;
+	int		height;
+	char	*north;
+	char	*south;
+	char	*west;
+	char	*east;
+	int		floor;
+	int		ceiling;
+	int		x;
+	int		y;
+}			t_map;
+
 typedef struct s_all
 {
-	void *mlx;
-	void *win;
-	t_data img;
+	void	*mlx;
+	void	*win;
+	t_data	img;
+	t_map	map;
 }	t_all;
 
 //typedef struct s_player
@@ -33,18 +48,7 @@ typedef struct s_all
 //	int		mouse_x;
 //}	t_player;
 //
-//typedef struct s_map
-//{
-//	char	*no_texture;
-//	char	*so_texture;
-//	char	*we_texture;
-//	char	*ea_texture;
-//	int		floor_color;
-//	int		ceilling_color;
-//	char	**map;
-//	int		width;
-//	int		height;
-//}	t_map;
+
 //
 //typedef struct s_sprite_coordinate
 //{
