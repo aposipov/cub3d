@@ -14,6 +14,7 @@
 
 /*init*/
 void	init_data(t_all *game);
+void	init_test(t_all *game);
 void	init_mlx(t_all *game);
 void	init_hooks(t_all *game);
 /**/

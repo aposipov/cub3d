@@ -4,6 +4,13 @@
 
 #include <cub3d.h>
 
+void	init_test(t_all *game)
+{
+	game->map.ceiling = 99999999; // pars
+	game->map.floor = 88888888; // pars
+	printf("*** init data test ver ***\n");
+}
+
 void	init_data(t_all *game)
 {
 	// null data

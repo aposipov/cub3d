@@ -47,9 +47,7 @@ typedef struct s_all
 //	char	start_side;
 //	int		mouse_x;
 //}	t_player;
-//
 
-//
 //typedef struct s_sprite_coordinate
 //{
 //	double		x;

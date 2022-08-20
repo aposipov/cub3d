@@ -20,6 +20,7 @@ HEADER = 	./inc/
 
 SRC =		src/main.c\
 			src/gnl/get_next_line.c src/gnl/get_next_line_utils.c\
+			src/init.c src/start.c\
 
 OBJ = 		$(patsubst %.c, %.o, $(SRC))
 

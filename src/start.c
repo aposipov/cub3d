@@ -70,8 +70,8 @@ void	draw_fc(t_all *game)
 {
 	int	x;
 	int	y;
-	game->map.ceiling = 99999999;
-	game->map.floor = 88888888;
+//	game->map.ceiling = 99999999; // pars
+//	game->map.floor = 88888888; // pars
 
 	x = -1;
 	while (++x < W_WIDTH)
@@ -80,9 +80,9 @@ void	draw_fc(t_all *game)
 		while (++y < W_HEIGHT)
 		{
 			if (y < W_HEIGHT / 2)
-				pixel_put(game, x, y, game->map.ceiling);
+				my_mlx_pixel_put(game, x, y, game->map.ceiling);
 			else
-				pixel_put(game, x, y, game->map.floor);
+				my_mlx_pixel_put(game, x, y, game->map.floor);
 		}
 	}
 }
