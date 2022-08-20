@@ -4,6 +4,49 @@
 
 #include "cub3d.h"
 
+//void	draw_pixel(t_all *all, int i, int j, int color)
+//{
+//	int	y;
+//	int	x;
+//
+//	y = HEIGHT * 0.01 * i;
+//	while (y < HEIGHT * 0.01 * (i + 1))
+//	{
+//		x = HEIGHT * 0.01 * j;
+//		while (x < HEIGHT * 0.01 * (j + 1))
+//		{
+//			pixel_put(all, x + 5, y + 5, color);
+//			x++;
+//		}
+//		y++;
+//	}
+//}
+
+//void	draw_mini_map(t_all *all)
+//{
+//	int	i;
+//	int	j;
+//
+//	i = 0;
+//	while (all->map.map[i])
+//	{
+//		j = 0;
+//		while (all->map.map[i][j])
+//		{
+//			if (all->map.map[i][j] == '1')
+//				draw_pixel(all, i, j, 0xEEEEEE);
+//			else
+//			{
+//				j++;
+//				continue ;
+//			}
+//			j++;
+//		}
+//		i++;
+//	}
+//	draw_pixel(all, all->plr.pos.y, all->plr.pos.x, 0x27CE06);
+//}
+
 void	pixel_put(t_all *game, int x, int y, int color)
 {
 	char	*dest;
@@ -14,10 +57,8 @@ void	pixel_put(t_all *game, int x, int y, int color)
 
 void	my_mlx_pixel_put(t_all *game, int x, int y, int color)
 {
+	//not work ? ss why
 	int	i;
-//	game->img.addr = malloc(sizeof(char) * 3);
-//	if(!game->img.addr)
-//		printf("addr failed\n");
 
 	i = (x * game->img.bpp / 8) + (y * game->img.ll);
 	game->img.addr[i] = (char)(color); // ss
@@ -29,8 +70,8 @@ void	draw_fc(t_all *game)
 {
 	int	x;
 	int	y;
-	game->map.ceiling = 16711680;
-	game->map.floor = 16776960;
+	game->map.ceiling = 99999999;
+	game->map.floor = 88888888;
 
 	x = -1;
 	while (++x < W_WIDTH)
@@ -48,11 +89,8 @@ void	draw_fc(t_all *game)
 
 void	game_start(t_all *game)
 {
-
-
-	//malloc?
 	draw_fc(game);
-	//draw_raycasting(all);
-	//draw_mini_map(all);
+	//draw_mini_map(all); // 3
+	//draw_raycasting(all); // 2
 	mlx_put_image_to_window(game->mlx, game->win, game->img.img, 0, 0);
 }
