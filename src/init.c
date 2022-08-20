@@ -16,6 +16,9 @@ void init_mlx(t_all *game)
 {
 	game->mlx = mlx_init();
 	game->win = mlx_new_window(game->mlx, W_WIDTH, W_HEIGHT, "cub3d");
+	game->img.img = mlx_new_image(game->mlx, W_WIDTH, W_HEIGHT);
+	game->img.addr = mlx_get_data_addr(game->img.img, &game->img.bpp,
+									   &game->img.ll, &game->img.endian);
 }
 
 void	init_hooks(t_all *game)
