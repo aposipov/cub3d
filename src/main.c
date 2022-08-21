@@ -52,7 +52,7 @@ int main(int argc, char **argv)
 	{
 		check_path(argv[1]);
 		init_test(&game); // data
-//		pars_data(&game, argv[1]);
+		pars_data(argv[1], &game);
 		init_mlx(&game);
 		init_hooks(&game);
 		game_start(&game); // not draw c or f

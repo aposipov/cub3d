@@ -8,6 +8,7 @@
 # include <fcntl.h>
 # include <math.h>
 # include <mlx/mlx.h>
+# include "libft.h"
 # include "get_next_line.h"
 # include "cub3d_structs.h"
 # include "cub3d_defines.h"
@@ -17,6 +18,8 @@ void	init_data(t_all *game);
 void	init_test(t_all *game);
 void	init_mlx(t_all *game);
 void	init_hooks(t_all *game);
+/**/
+void pars_data(char *path, t_all * game);
 /**/
 void	game_start(t_all *game);
 /*util*/
