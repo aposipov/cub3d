@@ -4,7 +4,7 @@
 
 #include "cub3d.h"
 
-int ft_close(void) // ?
+int	ft_close(void) // ?
 {
 	exit(0);
 }
@@ -44,9 +44,9 @@ static void check_path(char const *path)
 	open_path(path);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_all game;
+	t_all	game;
 
 	if (argc == 2)
 	{

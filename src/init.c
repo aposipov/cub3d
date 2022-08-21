@@ -16,6 +16,10 @@ void	init_data(t_all *game)
 	// null data
 	game->map.ceiling = -1;
 	game->map.floor = -1;
+	game->map.north = NULL;
+	game->map.south = NULL;
+	game->map.west = NULL;
+	game->map.east = NULL;
 	printf("*** init data ***\n");
 }
 
