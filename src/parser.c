@@ -30,7 +30,8 @@ void	pars_nswe(char *line, t_all *game)
 		game->map.west = get_text_addr(line + 3, game);
 	else if (ft_strncmp(line, "EA ", 3) == 0 || game->map.east == NULL)
 		game->map.east = get_text_addr(line + 3, game);
-	else
+	else if (game->map.north == NULL || game->map.south == NULL || game->map
+	.west == NULL || game->map.east == NULL) // ??
 		ft_error(RED"Error: texture not found!\n"NC);
 }
 
