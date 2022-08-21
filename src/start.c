@@ -49,7 +49,7 @@
 
 void	draw_intro(t_all *game)
 {
-	char *path = "../xpm/logo_cub.xpm"; // make ./
+	char *path = "../xpm/logo_cub.xpm"; // for make ./
 
 	game->intro = mlx_xpm_file_to_image(game->mlx, path, &game->intro_w,
 										&game->intro_h);

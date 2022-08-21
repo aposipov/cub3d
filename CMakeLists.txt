@@ -9,7 +9,8 @@ add_subdirectory(./libft)
 
 add_executable(cub3d src/main.c
 		src/gnl/get_next_line.c src/gnl/get_next_line_utils.c
-		src/init.c src/start.c src/parser.c)
+		src/init.c src/start.c
+		src/parser.c src/pars_fc.c src/pars_map.c)
 
 set(CMAKE_C_FLAGS  "-lmlx -lXext -lX11")
 set(CMAKE_C_FLAGS_INIT "-Wall -Werror -Wextra")
