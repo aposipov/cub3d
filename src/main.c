@@ -4,6 +4,12 @@
 
 #include "cub3d.h"
 
+void	ft_error(char *str)
+{
+	printf("%s\n", str);
+	exit(EXIT_FAILURE);
+}
+
 int	ft_close(void) // ?
 {
 	exit(0);

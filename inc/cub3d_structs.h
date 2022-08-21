@@ -2,8 +2,8 @@
 // Created by user on 15.08.22.
 //
 
-#ifndef CUB3D_CUB3D_STRUCTS_H
-# define CUB3D_CUB3D_STRUCTS_H
+#ifndef CUB3D_STRUCTS_H
+# define CUB3D_STRUCTS_H
 
 typedef struct s_data
 {

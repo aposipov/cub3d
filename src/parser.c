@@ -16,8 +16,8 @@ char	*get_text_addr(char *line, t_all *game)
 		printf("%s\n", line);
 		return (line);
 	}
-	printf("Error: wrong texture file\n");
-	return (NULL);
+	ft_error(RED"Error: wrong texture file\n"NC);
+	//return (NULL);
 }
 
 void	pars_nswe(char *line, t_all *game)
@@ -31,10 +31,7 @@ void	pars_nswe(char *line, t_all *game)
 	else if (ft_strncmp(line, "EA ", 3) == 0 || game->map.east == NULL)
 		game->map.east = get_text_addr(line + 3, game);
 	else
-	{
-		printf("Error: texture not found!\n");
-		exit(1);
-	}
+		ft_error(RED"Error: texture not found!\n"NC);
 }
 
 void	pars_line(char *line, t_all *game)

@@ -9,6 +9,7 @@
 # include <math.h>
 # include <mlx/mlx.h>
 # include "libft.h"
+# include "my_colours.h"
 # include "get_next_line.h"
 # include "cub3d_structs.h"
 # include "cub3d_defines.h"
@@ -25,8 +26,9 @@ void	pars_map(char *line, int i, t_all *game);
 /**/
 void	game_start(t_all *game);
 /*util*/
-int key_hook(int key);
-int ft_close(void);
+int		key_hook(int key);
+int		ft_close(void);
+void	ft_error(char *str);
 
 
 void	draw_intro(t_all *game);

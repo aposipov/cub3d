@@ -1,7 +1,7 @@
 
 
-#ifndef CUB3D_CUB3D_DEFINES_H
-# define CUB3D_CUB3D_DEFINES_H
+#ifndef CUB3D_DEFINES_H
+# define CUB3D_DEFINES_H
 
 # define KEY_LEFT			65361
 # define KEY_RIGHT			65363
