@@ -32,6 +32,9 @@ typedef struct s_all
 {
 	void	*mlx;
 	void	*win;
+	void	*intro;
+	int		intro_w;
+	int 	intro_h;
 	t_data	img;
 	t_map	map;
 }	t_all;

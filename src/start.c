@@ -47,6 +47,17 @@
 //	draw_pixel(all, all->plr.pos.y, all->plr.pos.x, 0x27CE06);
 //}
 
+void	draw_intro(t_all *game)
+{
+	char *path = "../xpm/logo_cub.xpm"; // make ./
+
+	game->intro = mlx_xpm_file_to_image(game->mlx, path, &game->intro_w,
+										&game->intro_h);
+	mlx_put_image_to_window(game->mlx, game->win, game->intro, 500, 200);
+	sleep(3);
+	mlx_clear_window(game->mlx, game->win);
+}
+
 void	pixel_put(t_all *game, int x, int y, int color)
 {
 	char	*dest;
@@ -70,8 +81,6 @@ void	draw_fc(t_all *game)
 {
 	int	x;
 	int	y;
-//	game->map.ceiling = 99999999; // pars
-//	game->map.floor = 88888888; // pars
 
 	x = -1;
 	while (++x < W_WIDTH)
@@ -89,6 +98,7 @@ void	draw_fc(t_all *game)
 
 void	game_start(t_all *game)
 {
+	draw_intro(game);
 	draw_fc(game);
 	//draw_mini_map(all); // 3
 	//draw_raycasting(all); // 2
