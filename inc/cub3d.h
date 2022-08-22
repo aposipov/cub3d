@@ -31,5 +31,8 @@ int		ft_close(void);
 void	ft_error(char *str);
 char	*del_n(char *line);
 
+void	my_pixel_put(t_all *game, int x, int y, int color);
+void	my_mlx_pixel_put(t_all *game, int x, int y, int color);
 void	draw_intro(t_all *game);
+void	draw_mmap(t_all *game);
 #endif

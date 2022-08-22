@@ -4,49 +4,6 @@
 
 #include "cub3d.h"
 
-//void	draw_pixel(t_all *all, int i, int j, int color)
-//{
-//	int	y;
-//	int	x;
-//
-//	y = HEIGHT * 0.01 * i;
-//	while (y < HEIGHT * 0.01 * (i + 1))
-//	{
-//		x = HEIGHT * 0.01 * j;
-//		while (x < HEIGHT * 0.01 * (j + 1))
-//		{
-//			pixel_put(all, x + 5, y + 5, color);
-//			x++;
-//		}
-//		y++;
-//	}
-//}
-
-//void	draw_mini_map(t_all *all)
-//{
-//	int	i;
-//	int	j;
-//
-//	i = 0;
-//	while (all->map.map[i])
-//	{
-//		j = 0;
-//		while (all->map.map[i][j])
-//		{
-//			if (all->map.map[i][j] == '1')
-//				draw_pixel(all, i, j, 0xEEEEEE);
-//			else
-//			{
-//				j++;
-//				continue ;
-//			}
-//			j++;
-//		}
-//		i++;
-//	}
-//	draw_pixel(all, all->plr.pos.y, all->plr.pos.x, 0x27CE06);
-//}
-
 void	draw_intro(t_all *game)
 {
 	char *path = "../xpm/logo_cub.xpm"; // for make ./
@@ -58,7 +15,7 @@ void	draw_intro(t_all *game)
 	mlx_clear_window(game->mlx, game->win);
 }
 
-void	pixel_put(t_all *game, int x, int y, int color)
+void	my_pixel_put(t_all *game, int x, int y, int color)
 {
 	char	*dest;
 
@@ -100,7 +57,7 @@ void	game_start(t_all *game)
 {
 	draw_intro(game);
 	draw_fc(game);
-	//draw_mini_map(all); // 3
 	//draw_raycasting(all); // 2
+	draw_mmap(game); // 3
 	mlx_put_image_to_window(game->mlx, game->win, game->img.img, 0, 0);
 }
