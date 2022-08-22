@@ -57,7 +57,7 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		check_path(argv[1]);
-		init_test(&game); // data
+		init_data(&game); // data / test
 		pars_data(argv[1], &game);
 		init_mlx(&game);
 		init_hooks(&game);

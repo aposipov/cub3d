@@ -22,17 +22,14 @@ char	*get_text_addr(char *line, t_all *game)
 
 void	pars_nswe(char *line, t_all *game)
 {
-	if (ft_strncmp(line, "NO ", 3) == 0 || game->map.north == NULL)
+	if (ft_strncmp(line, "NO ", 3) == 0 && game->map.north == NULL)
 		game->map.north = get_text_addr(line + 3, game);
-	else if (ft_strncmp(line, "SO ", 3) == 0 || game->map.south == NULL)
+	else if (ft_strncmp(line, "SO ", 3) == 0 && game->map.south == NULL)
 		game->map.south = get_text_addr(line + 3, game);
-	else if (ft_strncmp(line, "WE ", 3) == 0 || game->map.west == NULL)
+	else if (ft_strncmp(line, "WE ", 3) == 0 && game->map.west == NULL)
 		game->map.west = get_text_addr(line + 3, game);
-	else if (ft_strncmp(line, "EA ", 3) == 0 || game->map.east == NULL)
+	else if (ft_strncmp(line, "EA ", 3) == 0 && game->map.east == NULL)
 		game->map.east = get_text_addr(line + 3, game);
-	else if (game->map.north == NULL || game->map.south == NULL || game->map
-	.west == NULL || game->map.east == NULL) // ??
-		ft_error(RED"Error: texture not found!\n"NC);
 }
 
 void	pars_line(char *line, t_all *game)
@@ -42,8 +39,13 @@ void	pars_line(char *line, t_all *game)
 	i = 0;
 	if (line[0] == 'N' || line[0] == 'S' || line[0] == 'W' || line[0] == 'E')
 		pars_nswe(line, game);
+	else if (game->map.north == NULL || game->map.south == NULL || game->map
+	.west	== NULL || game->map.east == NULL) // ??
+		ft_error(RED"Error: texture not found!\n"NC);
 	if (line[0] == 'F' || line[0] == 'C')
 		pars_fc(line, game);
+//	else if (game->map.floor == -1 || game->map.ceiling == -1)
+//		ft_error(RED"Error: color F/C not found\n"NC);
 	while (ft_isspace(line[i]))
 		i++;
 	if (line[i] == '1' || line [i] == '0')
