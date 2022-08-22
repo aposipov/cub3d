@@ -29,7 +29,7 @@ void	game_start(t_all *game);
 int		key_hook(int key);
 int		ft_close(void);
 void	ft_error(char *str);
-
+char	*del_n(char *line);
 
 void	draw_intro(t_all *game);
 #endif

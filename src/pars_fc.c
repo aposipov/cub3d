@@ -6,7 +6,7 @@
 
 int	torgb(int r, int g, int b)
 {
-	return (1 << 24 | r << 16 | g << 8 | b);
+	return (r << 16 | g << 8 | b); // 1 << 24 |
 }
 
 int	rgb(char *line)
@@ -50,12 +50,14 @@ void	pars_fc(char *line, t_all *game)
 	if ((ft_strncmp(line, "F ", 2) == 0) && game->map.floor == -1)
 	{
 		check_comma(line);
+		//printf(" col = %s\n", line); //
 		game->map.floor = rgb(line);
 		printf("fl = %d\n", game->map.floor);
 	}
 	else if ((ft_strncmp(line, "C ", 2) == 0) && game->map.ceiling == -1)
 	{
 		check_comma(line);
+		//printf(" col = %s\n", line); //
 		game->map.ceiling = rgb(line);
 		printf("cl = %d\n", game->map.ceiling);
 	}
