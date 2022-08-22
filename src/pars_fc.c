@@ -16,7 +16,7 @@ int	rgb(char *line)
 	int		rgb;
 
 	i = 0;
-	while (line[i] == ' ' || line[i] == '\t')
+	while (ft_isspace(line[i])) // line[i] == ' ' || line[i] == '\t'
 		i++;
 	colors = ft_split(line, ',');
 	if (!colors)
