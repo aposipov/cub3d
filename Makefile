@@ -21,7 +21,7 @@ HEADER = 	./inc/
 SRC =		src/main.c\
 			src/gnl/get_next_line.c src/gnl/get_next_line_utils.c\
 			src/init.c src/start.c\
-			src/parser.c src/pars_fc.c src/pars_map.c\
+			src/parsing/parser.c src/parsing/pars_fc.c src/parsing/pars_map.c\
 
 OBJ = 		$(patsubst %.c, %.o, $(SRC))
 
