@@ -74,10 +74,7 @@ char	*get_text_addr(char *line)
 void	pars_nswe(char *line, t_all *game)
 {
 	if (ft_strncmp(line, "NO ", 3) == 0 && game->map.north == NULL)
-	{
 		game->map.north = get_text_addr(line + 3);
-		//printf("map.north = %s\n", game->map.north);
-	}
 	else if (ft_strncmp(line, "SO ", 3) == 0 && game->map.south == NULL)
 		game->map.south = get_text_addr(line + 3);
 	else if (ft_strncmp(line, "WE ", 3) == 0 && game->map.west == NULL)

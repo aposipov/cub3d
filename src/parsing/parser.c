@@ -23,14 +23,14 @@ void find_nswe(t_all *game)
 			{
 				count++;
 				if (count == 2)
-					ft_error("Error: find more one pl pos");
+					ft_error(RED"Error: find more one pl pos\n"NC);
 				set_pl_pos(game, nswe, i, j);
 				game->map.map[(int)i][(int)j] = '0';
 			}
 		}
 	}
 	if (count == 0)
-		ft_error("Error: find 0 pos");
+		ft_error(RED"Error: find 0 pos\n"NC);
 }
 
 void	pars_line(char *line, t_all *game)
@@ -73,7 +73,7 @@ void	pars_data(char *path, t_all * game)
 	if (game->map.north == NULL || game->map.south == NULL
 		|| game->map.west == NULL || game->map.east == NULL
 		|| game->map.floor == -1 || game->map.ceiling == -1)
-		ft_error("Error: NSWE/FC fail");
+		ft_error(RED"Error: NSWE/FC fail"NC);
 	find_nswe(game);
 	//free(line);
 	//printf("data ok\n"); //

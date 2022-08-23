@@ -40,6 +40,23 @@ typedef struct s_pl
 	t_point	dir;
 }			t_pl;
 
+typedef struct s_ray
+{
+	double	camera_x;
+	t_point	raydir;
+	t_point	plane;
+	t_point	dd;
+	t_point	sd;
+	int		step_x;
+	int		step_y;
+	int		hit;
+	int		side;
+	double	walldist;
+	int		height;
+	int		start;
+	int		end;
+}			t_ray;
+
 typedef struct s_all
 {
 	void	*mlx;
@@ -50,6 +67,7 @@ typedef struct s_all
 	t_data	img;
 	t_map	map;
 	t_pl	pl;
+	t_ray	ray;
 }	t_all;
 
 #endif

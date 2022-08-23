@@ -10,18 +10,18 @@ void	ft_error(char *str)
 	exit(EXIT_FAILURE);
 }
 
-int	ft_close(void) // ?
-{
-	exit(0);
-}
-
-int key_hook(int key)
-{
-	if (key == KEY_ESC)
-		ft_close();
-	printf("key = %d\n", key);
-	return (0);
-}
+//int	ft_close(void) // ?
+//{
+//	exit(0);
+//}
+//
+//int key_hook(int key)
+//{
+//	if (key == KEY_ESC)
+//		ft_close();
+//	printf("key = %d\n", key);
+//	return (0);
+//}
 
 static void open_path(char const *path)
 {
@@ -61,7 +61,8 @@ int	main(int argc, char **argv)
 		pars_data(argv[1], &game);
 		init_mlx(&game);
 		init_hooks(&game);
-		game_start(&game); // not draw c or f
+		//mlx_loop_hook(game.mlx, game_start, &game);
+		game_start(&game); // in loop ?
 		//mlx_loop_hook(all.mlx.mlx, draw_cub, &all); // loop or not ?
 		mlx_loop(game.mlx);
 	}
