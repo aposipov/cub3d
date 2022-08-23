@@ -10,8 +10,9 @@ void	draw_intro(t_all *game)
 
 	game->intro = mlx_xpm_file_to_image(game->mlx, path, &game->intro_w,
 										&game->intro_h);
-	mlx_put_image_to_window(game->mlx, game->win, game->intro, 500, 200);
-	sleep(3);
+	mlx_put_image_to_window(game->mlx, game->win, game->intro, (W_WIDTH / 2)
+	- 150,(W_HEIGHT / 2) - 50);
+	sleep(5);
 	mlx_clear_window(game->mlx, game->win);
 }
 
