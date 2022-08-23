@@ -17,8 +17,8 @@
 # define KEY_ENTER			65293
 
 # define CEL_SIZE 6
-# define W_WIDTH 1280
-# define W_HEIGHT 720
+# define W_WIDTH 1920 // 1280
+# define W_HEIGHT 1080 // 720
 # define TEX_WIDTH 64.
 # define TEX_HEIGHT 64.
 
