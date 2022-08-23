@@ -4,60 +4,33 @@
 
 #include "cub3d.h"
 
-char *del_n(char *line)
+void find_nswe(t_all *game)
 {
-	int i = 0;
-	char *tmp;
-	int len;
+	double i;
+	double j;
+	int count;
+	int nswe;
 
-	len = ft_strlen(line);
-	if (line[len] != '\n')
-		line[len + 1] = '\n';
-	tmp = malloc (sizeof(char) * len);
-	if (!tmp)
-		ft_error(RED"del_n malloc"NC);
-	while (line[i] != '\n')
+	count = 0;
+	i = -1;
+	while (game->map.map[(int)++i])
 	{
-		tmp[i] = line[i];
-		i++;
+		j = -1;
+		while (game->map.map[(int)i][(int)++j])
+		{
+			nswe = game->map.map[(int)i][(int)j];
+			if (nswe == 'N' || nswe == 'S' || nswe == 'W' || nswe == 'E')
+			{
+				count++;
+				if (count == 2)
+					ft_error("Error: find more one pl pos");
+				set_pl_pos(game, nswe, i, j);
+				game->map.map[(int)i][(int)j] = '0';
+			}
+		}
 	}
-//	*tmp2 = &tmp;
-//	free(tmp);
-	return (tmp);
-}
-
-char	*get_text_addr(char *line)
-{
-	int		i;
-	char *tmp;
-
-	i = 0;
-	while (ft_isspace(line[i]))
-		i++;
-	if (line[i] == '.' && line[i + 1] == '.' && line [i + 2] == '/')
-	{
-//			printf("%s\n", line); //
-			tmp = del_n(line);
-			printf("tmp = %s\n", tmp);
-			return (tmp);
-	}
-	ft_error(RED"Error: wrong texture file\n"NC);
-	return (0);
-}
-
-void	pars_nswe(char *line, t_all *game)
-{
-	if (ft_strncmp(line, "NO ", 3) == 0 && game->map.north == NULL)
-	{
-		game->map.north = get_text_addr(line + 3);
-		//printf("map.north = %s\n", game->map.north);
-	}
-	else if (ft_strncmp(line, "SO ", 3) == 0 && game->map.south == NULL)
-		game->map.south = get_text_addr(line + 3);
-	else if (ft_strncmp(line, "WE ", 3) == 0 && game->map.west == NULL)
-		game->map.west = get_text_addr(line + 3);
-	else if (ft_strncmp(line, "EA ", 3) == 0 && game->map.east == NULL)
-		game->map.east = get_text_addr(line + 3);
+	if (count == 0)
+		ft_error("Error: find 0 pos");
 }
 
 void	pars_line(char *line, t_all *game)
@@ -97,7 +70,12 @@ void	pars_data(char *path, t_all * game)
 			break ;
 		//printf("%s\n", line); //
 	}
-	free(line);
+	if (game->map.north == NULL || game->map.south == NULL
+		|| game->map.west == NULL || game->map.east == NULL
+		|| game->map.floor == -1 || game->map.ceiling == -1)
+		ft_error("Error: NSWE/FC fail");
+	find_nswe(game);
+	//free(line);
 	//printf("data ok\n"); //
 	close(fd);
 }

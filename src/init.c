@@ -27,6 +27,8 @@ void	init_data(t_all *game)
 	game->map.height = 0;
 	game->pl.pos.x = 0;
 	game->pl.pos.y = 0;
+	game->pl.dir.x = 0;
+	game->pl.dir.y = 0;
 
 	printf("*** init data ***\n");
 }
@@ -45,7 +47,7 @@ void	init_hooks(t_all *game)
 	mlx_key_hook(game->win, key_hook, &game);
 //	mlx_hook(game->win, 2, 0, key_hook, &game); // faster?
 	mlx_mouse_hook(game->win, key_hook, &game); // ? move l r
-	mlx_mouse_show(game->mlx, game->win); // for what
-	mlx_mouse_move(game->mlx, game->win, 300,300); // for what
+//	mlx_mouse_show(game->mlx, game->win); // for what
+//	mlx_mouse_move(game->mlx, game->win, 300,300); // for what
 	mlx_hook(game->win, 17, 0, ft_close, 0); // ? &game
 }

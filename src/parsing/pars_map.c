@@ -4,10 +4,11 @@
 
 #include "cub3d.h"
 
+// check position
+// check map close
+
 int	check_line(char *line, int i)
 {
-//	while (ft_isspace(line[i]))
-//		i++;
 	while (line[i])
 	{
 		if (line[i] != '1' && line[i] != '0' && line[i] != 'N'

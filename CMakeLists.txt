@@ -10,7 +10,7 @@ add_subdirectory(./libft)
 add_executable(cub3d src/main.c
 		src/gnl/get_next_line.c src/gnl/get_next_line_utils.c
 		src/init.c src/start.c
-		src/parsing/parser.c src/parsing/pars_fc.c src/parsing/pars_map.c
+		src/parsing/parser.c src/parsing/pars_fc.c src/parsing/pars_map.c src/parsing/pars_nswe.c
 		src/raycasting/raycasting.c src/minimap.c)
 
 set(CMAKE_C_FLAGS  "-lmlx -lXext -lX11")

@@ -21,8 +21,11 @@ void	init_mlx(t_all *game);
 void	init_hooks(t_all *game);
 /*parsing*/
 void	pars_data(char *path, t_all * game);
+void	pars_nswe(char *line, t_all *game);
 void	pars_fc(char *line, t_all *game);
 void	pars_map(char *line, int i, t_all *game);
+void	set_pl_pos(t_all *all, int nswe, double i, double j);
+
 /**/
 void	game_start(t_all *game);
 /*util*/
