@@ -62,3 +62,7 @@ void	game_start(t_all *game)
 	draw_mmap(game); // 3
 	mlx_put_image_to_window(game->mlx, game->win, game->img.img, 0, 0);
 }
+
+// check not f/c
+// check duplicate
+// check map close
