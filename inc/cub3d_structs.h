@@ -28,6 +28,18 @@ typedef struct s_map
 	int		y;
 }			t_map;
 
+typedef struct s_point
+{
+	double	x;
+	double	y;
+}			t_point;
+
+typedef struct s_pl
+{
+	t_point	pos;
+	t_point	dir;
+}			t_pl;
+
 typedef struct s_all
 {
 	void	*mlx;
@@ -37,6 +49,7 @@ typedef struct s_all
 	int 	intro_h;
 	t_data	img;
 	t_map	map;
+	t_pl	pl;
 }	t_all;
 
 //typedef struct s_player

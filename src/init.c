@@ -24,6 +24,10 @@ void	init_data(t_all *game)
 	game->map.south = NULL;
 	game->map.west = NULL;
 	game->map.east = NULL;
+	game->map.height = 0;
+	game->pl.pos.x = 0;
+	game->pl.pos.y = 0;
+
 	printf("*** init data ***\n");
 }
 

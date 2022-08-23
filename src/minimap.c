@@ -15,7 +15,7 @@ void	draw_pixel(t_all *all, int i, int j, int color)
 		x = W_HEIGHT * 0.01 * j;
 		while (x < W_HEIGHT * 0.01 * (j + 1))
 		{
-			my_pixel_put(all, x + 5, y + 5, color);
+			my_pixel_put(all, x + 15, y + 15, color);
 			x++;
 		}
 		y++;
@@ -44,5 +44,5 @@ void	draw_mmap(t_all *game)
 		}
 		i++;
 	}
-	//draw_pixel(all, all->plr.pos.y, all->plr.pos.x, 0x27CE06);
+	draw_pixel(game, game->pl.pos.y, game->pl.pos.x, 0x27CE06);
 }
