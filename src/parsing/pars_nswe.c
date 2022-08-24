@@ -11,22 +11,22 @@ void	set_pl_pos(t_all *game, int nswe, double i, double j)
 	if (nswe == 'N')
 	{
 		game->pl.dir.y = -1;
-		//game->ray.plane.x = 0.66;
+		game->ray.plane.x = 0.66;
 	}
 	else if (nswe == 'S')
 	{
 		game->pl.dir.y = 1;
-		//game->ray.plane.x = -0.66;
+		game->ray.plane.x = -0.66;
 	}
 	else if (nswe == 'W')
 	{
 		game->pl.dir.x = -1;
-		//game->ray.plane.y = -0.66;
+		game->ray.plane.y = -0.66;
 	}
 	else if (nswe == 'E')
 	{
 		game->pl.dir.x = 1;
-		//game->ray.plane.y = 0.66;
+		game->ray.plane.y = 0.66;
 	}
 }
 

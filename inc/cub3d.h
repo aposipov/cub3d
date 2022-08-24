@@ -27,7 +27,11 @@ void	pars_map(char *line, int i, t_all *game);
 void	set_pl_pos(t_all *all, int nswe, double i, double j);
 
 /**/
-void	game_start(t_all *game);
+int		game_start(t_all *game);
+
+/*raycast*/
+void    draw_location(t_all *data);
+void    init_raycast(t_all *data, int x);
 
 /*util*/
 int		key_hook(int key, t_all *game);

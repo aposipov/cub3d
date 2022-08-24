@@ -18,6 +18,11 @@
 void	init_data(t_all *game)
 {
 	// null data
+	game->mlx = NULL;
+	game->mlx = NULL;
+	game->img.img = NULL;
+	game->img.addr = NULL;
+	game->map.map = NULL;
 	game->map.ceiling = -1;
 	game->map.floor = -1;
 	game->map.north = NULL;
