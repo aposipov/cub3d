@@ -2,18 +2,18 @@
 // Created by user on 19.08.22.
 //
 
-#include <cub3d.h>
+#include "cub3d.h"
 
-void	init_test(t_all *game)
-{
-	game->map.ceiling = 99999999; // pars
-	game->map.floor = 88888888; // pars
-	game->map.north = NULL;
-	game->map.south = NULL;
-	game->map.west = NULL;
-	game->map.east = NULL;
-	printf("*** init data test ver ***\n");
-}
+//void	init_test(t_all *game)
+//{
+//	game->map.ceiling = 99999999; // pars
+//	game->map.floor = 88888888; // pars
+//	game->map.north = NULL;
+//	game->map.south = NULL;
+//	game->map.west = NULL;
+//	game->map.east = NULL;
+//	printf("*** init data test ver ***\n");
+//}
 
 void	init_data(t_all *game)
 {

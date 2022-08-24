@@ -12,7 +12,7 @@ void	draw_intro(t_all *game)
 										&game->intro_h);
 	mlx_put_image_to_window(game->mlx, game->win, game->intro, (W_WIDTH / 2)
 	- 150,(W_HEIGHT / 2) - 50);
-	sleep(3);
+	sleep(2);
 	mlx_clear_window(game->mlx, game->win);
 }
 

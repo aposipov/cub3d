@@ -6,22 +6,9 @@
 
 void	ft_error(char *str)
 {
-	printf("%s\n", str);
+	printf(RED"%s\n"NC, str);
 	exit(EXIT_FAILURE);
 }
-
-//int	ft_close(void) // ?
-//{
-//	exit(0);
-//}
-//
-//int key_hook(int key)
-//{
-//	if (key == KEY_ESC)
-//		ft_close();
-//	printf("key = %d\n", key);
-//	return (0);
-//}
 
 static void open_path(char const *path)
 {
@@ -61,9 +48,8 @@ int	main(int argc, char **argv)
 		pars_data(argv[1], &game);
 		init_mlx(&game);
 		init_hooks(&game);
-		//mlx_loop_hook(game.mlx, game_start, &game);
+		//mlx_loop_hook(game.mlx, game_start, &game); // loop or not ?
 		game_start(&game); // in loop ?
-		//mlx_loop_hook(all.mlx.mlx, draw_cub, &all); // loop or not ?
 		mlx_loop(game.mlx);
 	}
 	else
