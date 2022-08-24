@@ -45,8 +45,8 @@ int	main(int argc, char **argv)
 	{
 		check_path(argv[1]);
 		init_data(&game); // data / test
-		pars_data(argv[1], &game);
 		init_mlx(&game);
+		pars_data(argv[1], &game);
 		init_hooks(&game);
 		draw_intro(&game);
 		mlx_loop_hook(game.mlx, game_start, &game); // loop or not ?

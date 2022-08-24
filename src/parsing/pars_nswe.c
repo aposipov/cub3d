@@ -4,6 +4,22 @@
 
 #include "cub3d.h"
 
+char *addr_to_path(t_all *game, char *path)
+{
+	int i;
+	int x;
+	int y;
+	void *img;
+	char *adr;
+	char *path2 = "../xpm/logo_cub.xpm";
+
+	img = mlx_xpm_file_to_image(&game->mlx, path, &x, &y);
+	if (img == NULL || x != 64 || y != 64)
+		ft_error("Error: wrong xpm file\n");
+	adr = mlx_get_data_addr(img, &x, &y, &i);
+	return (adr);
+}
+
 void	set_pl_pos(t_all *game, int nswe, double i, double j)
 {
 	game->pl.pos.x = j;
@@ -52,7 +68,7 @@ char *del_n(char *line)
 	return (tmp);
 }
 
-char	*get_text_addr(char *line)
+char	*get_text_addr(t_all *game, char *line)
 {
 	int		i;
 	char *tmp;
@@ -65,7 +81,7 @@ char	*get_text_addr(char *line)
 //			printf("%s\n", line); //
 		tmp = del_n(line);
 		printf("tmp = %s\n", tmp);
-		return (tmp);
+		return (addr_to_path(game,tmp));
 	}
 	ft_error(RED"Error: wrong texture file\n"NC);
 	return (0);
@@ -74,11 +90,11 @@ char	*get_text_addr(char *line)
 void	pars_nswe(char *line, t_all *game)
 {
 	if (ft_strncmp(line, "NO ", 3) == 0 && game->map.north == NULL)
-		game->map.north = get_text_addr(line + 3);
+		game->map.north = get_text_addr(game,line + 3);
 	else if (ft_strncmp(line, "SO ", 3) == 0 && game->map.south == NULL)
-		game->map.south = get_text_addr(line + 3);
+		game->map.south = get_text_addr(game,line + 3);
 	else if (ft_strncmp(line, "WE ", 3) == 0 && game->map.west == NULL)
-		game->map.west = get_text_addr(line + 3);
+		game->map.west = get_text_addr(game,line + 3);
 	else if (ft_strncmp(line, "EA ", 3) == 0 && game->map.east == NULL)
-		game->map.east = get_text_addr(line + 3);
+		game->map.east = get_text_addr(game,line + 3);
 }

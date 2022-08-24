@@ -4,20 +4,7 @@
 
 #include "cub3d.h"
 
-char *addr_to_path(t_all *game, char *path)
-{
-	int i;
-	int x;
-	int y;
-	void *img;
-	char *adr;
 
-	img = mlx_xpm_file_to_image(game->mlx, path, &x, &y);
-	if (img == NULL || x != 64 || y != 64)
-		ft_error("Error: wrong xpm file\n");
-	adr = mlx_get_data_addr(img, &x, &y, &i);
-	return (adr);
-}
 
 void	pre_processing(t_all *all)
 {
@@ -43,7 +30,8 @@ int	texturing(t_all *all, unsigned int *color)
 	if (all->ray.side == 0)
 	{
 		if (all->ray.ray_dir.x >= 0)
-			*color = ((unsigned int *)(all->map.east)) // to addr no path
+			*color = ((unsigned int *)(all->map.east)) // to
+					// addr no path
 			[64 * all->wall.tex_y + all->wall.tex_x];
 		else
 			*color = ((unsigned int *)(all->map.west))
