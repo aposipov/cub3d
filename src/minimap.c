@@ -15,7 +15,7 @@ void	draw_pixel(t_all *all, int i, int j, int color)
 		x = W_HEIGHT * 0.01 * j;
 		while (x < W_HEIGHT * 0.01 * (j + 1))
 		{
-			my_pixel_put(all, x + 15, y + 15, color);
+			my_pixel_put(all, x + 10, y + 10, color);
 			x++;
 		}
 		y++;

@@ -2,7 +2,7 @@
 // Created by user on 19.08.22.
 //
 
-#include <cub3d.h>
+#include "cub3d.h"
 
 void	init_test(t_all *game)
 {

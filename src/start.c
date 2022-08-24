@@ -6,7 +6,7 @@
 
 void	draw_intro(t_all *game)
 {
-	char *path = "../xpm/logo_cub.xpm"; // for make ./
+	char *path = "./xpm/logo_cub.xpm"; // for make ./
 
 	game->intro = mlx_xpm_file_to_image(game->mlx, path, &game->intro_w,
 										&game->intro_h);
@@ -54,14 +54,14 @@ void	draw_fc(t_all *game)
 	}
 }
 
-void	game_start(t_all *game)
+int	game_start(t_all *game)
 {
-	draw_intro(game);
+	//draw_intro(game);
 	draw_fc(game);
-	//draw_raycasting(all); // 2
+	draw_location(game); // 2
 	draw_mmap(game); // 3
 	mlx_put_image_to_window(game->mlx, game->win, game->img.img, 0, 0);
-	//return (0);
+	return (1);
 }
 
 // check not f/c

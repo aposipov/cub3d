@@ -10,9 +10,9 @@ void	key_hook_ad(int key, t_all *game)
 	{
 		if (game->map.map[(int)(game->pl.pos.y)][(int)(game->pl.pos.x - game->ray.plane.x * MS)] == '0')
 		{
-			//game->pl.pos.x -= game->ray.plane.x * MS;
-			draw_pixel(game, game->pl.pos.y, game->pl.pos.x -= game->ray
-					.plane.x * MS, 0x27CE06);
+			game->pl.pos.x -= game->ray.plane.x * MS;
+			//draw_pixel(game, game->pl.pos.y, game->pl.pos.x -= game->ray
+			//		.plane.x * MS, 0x27CE06);
 		}
 		if (game->map.map[(int)(game->pl.pos.y - game->ray.plane.y * MS)]
 			[(int)(game->pl.pos.x)] == '0')
