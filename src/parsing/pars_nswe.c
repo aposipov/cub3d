@@ -11,9 +11,11 @@ char *addr_to_path(t_all *game, char *path)
 	int y;
 	void *img;
 	char *adr;
-	char *path2 = "../xpm/logo_cub.xpm";
+	char *path2 = "../xpm/no.xpm";
+	printf("len path = %d\n", ft_strlen(path));
+	printf("len path2 = %d\n", ft_strlen(path2));
 
-	img = mlx_xpm_file_to_image(&game->mlx, path, &x, &y);
+	img = mlx_xpm_file_to_image(game->mlx, path2, &x, &y);
 	if (img == NULL || x != 64 || y != 64)
 		ft_error("Error: wrong xpm file\n");
 	adr = mlx_get_data_addr(img, &x, &y, &i);
