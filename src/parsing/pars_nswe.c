@@ -11,9 +11,9 @@ char *addr_to_path(t_all *game, char *path)
 	int y;
 	void *img;
 	char *adr;
-	char *path2 = "../xpm/no.xpm";
-	printf("len path = %d\n", ft_strlen(path));
-	printf("len path2 = %d\n", ft_strlen(path2));
+	char *path2 = "./xpm/no.xpm";
+	printf("len path = %ld\n", ft_strlen(path));
+	printf("len path2 = %ld\n", ft_strlen(path2));
 
 	img = mlx_xpm_file_to_image(game->mlx, path2, &x, &y);
 	if (img == NULL || x != 64 || y != 64)

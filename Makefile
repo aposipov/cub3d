@@ -14,7 +14,7 @@ NAME =		cub3d
 LIBFT_A = 	libft/libft.a
 CC = 		gcc
 WFLAGS = 	-Wall -Wextra -Werror
-MLXFLAG =	-lmlx -lX11 -lXext
+MLXFLAG =	-lm -lmlx -lX11 -lXext
 INCFLAG = 	-I ./inc/ -I ./libft/inc
 HEADER = 	./inc/
 
@@ -22,8 +22,9 @@ HEADER = 	./inc/
 SRC =		src/main.c\
 			src/gnl/get_next_line.c src/gnl/get_next_line_utils.c\
 			src/init.c src/start.c\
-			src/parsing/parser.c src/parsing/pars_fc.c src/parsing/pars_map.c\
-			src/minimap.c\
+			src/parsing/parser.c src/parsing/pars_fc.c src/parsing/pars_map.c src/parsing/pars_nswe.c\
+			src/minimap.c src/hooks.c\
+			src/raycasting/draw_textures.c src/raycasting/dda_calculations.c\
 
 OBJ = 		$(patsubst %.c, %.o, $(SRC))
 

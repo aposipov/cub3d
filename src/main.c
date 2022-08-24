@@ -47,10 +47,12 @@ int	main(int argc, char **argv)
 		init_data(&game); // data / test
 		init_mlx(&game);
 		pars_data(argv[1], &game);
-		init_hooks(&game);
 		draw_intro(&game);
-		mlx_loop_hook(game.mlx, game_start, &game); // loop or not ?
+        printf("IN main %f\n", (game.pl.pos.y));
+		mlx_loop_hook(game.mlx, game_start, &game);
+//      mlx_hook(game.win, 2, 0, key_hook, &game);// loop or not ?
 //		game_start(&game); // in loop ?
+        init_hooks(&game);
 		mlx_loop(game.mlx);
 	}
 	else
