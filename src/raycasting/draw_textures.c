@@ -6,74 +6,73 @@
 
 
 
-void	pre_processing(t_all *all)
+void	pre_processing(t_all *game)
 {
 	double	wall_x;
 
-	if (all->ray.side == 0)
-		wall_x = all->pl.pos.y + all->ray.wall_dist * all->ray.ray_dir.y;
+	if (game->ray.side == 0)
+		wall_x = game->pl.pos.y + game->ray.wall_dist * game->ray.ray_dir.y;
 	else
-		wall_x = all->pl.pos.x + all->ray.wall_dist * all->ray.ray_dir.x;
+		wall_x = game->pl.pos.x + game->ray.wall_dist * game->ray.ray_dir.x;
 	wall_x -= floor(wall_x); // ЭТА ФУНКЦИЯ Я НЕ ПОНИМАЮ ЧТО С НЕЙ, пришлось из-за нее в мейк отдельный флаг добавлять, я когда завтра текстуры делать буду наверное напишу альтернативу
-	all->wall.tex_x = (int)(wall_x * (double)(64));
-	if (all->ray.side == 0 && all->ray.ray_dir.x > 0)
-		all->wall.tex_x = 64 - all->wall.tex_x - 1;
-	if (all->ray.side == 1 && all->ray.ray_dir.y < 0)
-		all->wall.tex_x = 64 - all->wall.tex_x - 1;
-	all->wall.step = 1.0 * 64 / all->ray.height;
-	all->wall.tex_pos = (all->ray.start - W_HEIGHT / 2 + all->ray.height / 2)
-						* all->wall.step;
+	game->wall.tex_x = (int)(wall_x * (double)(T_WIDTH));
+	if (game->ray.side == 0 && game->ray.ray_dir.x > 0)
+		game->wall.tex_x = T_WIDTH - game->wall.tex_x - 1;
+	if (game->ray.side == 1 && game->ray.ray_dir.y < 0)
+		game->wall.tex_x = T_WIDTH - game->wall.tex_x - 1;
+	game->wall.step = 1.0 * T_WIDTH / game->ray.height;
+	game->wall.tex_pos = (game->ray.start - W_HEIGHT / 2 + game->ray.height / 2)
+						 * game->wall.step;
 }
 
-int	texturing(t_all *all, unsigned int *color)
+int	texturing(t_all *game, unsigned int *color)
 {
-	if (all->ray.side == 0)
+	if (game->ray.side == 0)
 	{
-		if (all->ray.ray_dir.x >= 0)
-			*color = ((unsigned int *)(all->map.east)) // to
-					// addr no path
-			[64 * all->wall.tex_y + all->wall.tex_x];
+		if (game->ray.ray_dir.x >= 0)
+			*color = ((unsigned int *)(game->map.east)) // to addr no path
+			[T_HEIGHT * game->wall.tex_y + game->wall.tex_x];
 		else
-			*color = ((unsigned int *)(all->map.west))
-			[64 * all->wall.tex_y + all->wall.tex_x];
+			*color = ((unsigned int *)(game->map.west))
+			[T_HEIGHT * game->wall.tex_y + game->wall.tex_x];
 	}
-	else if (all->ray.side == 1)
+	else if (game->ray.side == 1)
 	{
-		if (all->ray.ray_dir.y >= 0)
-			*color = ((unsigned int *)(all->map.south))
-			[64 * all->wall.tex_y + all->wall.tex_x];
+		if (game->ray.ray_dir.y >= 0)
+			*color = ((unsigned int *)(game->map.south))
+			[T_HEIGHT * game->wall.tex_y + game->wall.tex_x];
 		else
-			*color = ((unsigned int *)(all->map.north))
-			[64 * all->wall.tex_y + all->wall.tex_x];
+			*color = ((unsigned int *)(game->map.north))
+			[T_HEIGHT * game->wall.tex_y + game->wall.tex_x];
 	}
 	return (*color);
 }
 
-void	textures(t_all *all, int x) // этот кусок кода и выше абсолютно не мои, они здесь для проверки вычислений
+void	textures(t_all *game, int x) // этот кусок кода и выше абсолютно не мои, они здесь для проверки вычислений
 {
 	int				y;
 	unsigned int	color;
 
-	pre_processing(all);
-	y = all->ray.start;
-	while (y <= all->ray.end)
+	pre_processing(game);
+	y = game->ray.start;
+	while (y <= game->ray.end)
 	{
-		all->wall.tex_y = (int)all->wall.tex_pos & (64 - 1);
-		all->wall.tex_pos += all->wall.step;
-		color = texturing(all, &color);
-		my_pixel_put(all, x, y, color);
+		game->wall.tex_y = (int)game->wall.tex_pos & (T_HEIGHT - 1);
+		game->wall.tex_pos += game->wall.step;
+		color = texturing(game, &color);
+		my_pixel_put(game, x, y, color);
 		y++;
 	}
 }
 
-void draw_location(t_all *data)
+void draw_location(t_all *game)
 {
 	int x;
 
 	x = -1;
 	while (++x < W_WIDTH)
 	{
-		init_raycast(data, x);
-		textures(data, x);
+		init_raycast(game, x);
+		textures(game, x);
 	}
 }

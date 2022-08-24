@@ -19,10 +19,9 @@
 # define CEL_SIZE 6
 # define W_WIDTH 1920 // 1280/1920
 # define W_HEIGHT 1080 // 720/1080
-# define T_WIDTH 64.
-# define T_HEIGHT 64.
-
+# define T_WIDTH 64
+# define T_HEIGHT 64
 # define RS 0.3
-# define MS 0.1
+# define MS 0.25
 
 #endif //CUB3D_CUB3D_DEFINES_H

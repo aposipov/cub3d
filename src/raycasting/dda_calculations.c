@@ -4,77 +4,77 @@
 
 #include "cub3d.h"
 
-void side_dist(t_all *data) // вычисление боковой дистанции
+void side_dist(t_all *game) // вычисление боковой дистанции
 {
-	if (data->ray.ray_dir.x < 0)
+	if (game->ray.ray_dir.x < 0)
 	{
-		data->ray.step_x = -1;
-		data->ray.sd.x = (data->pl.pos.x - data->map.x) * data->ray.dd.x;
+		game->ray.step_x = -1;
+		game->ray.sd.x = (game->pl.pos.x - game->map.x) * game->ray.dd.x;
 	}
 	else
 	{
-		data->ray.step_x = 1;
-		data->ray.sd.x = (data->map.x + 1.0 - data->pl.pos.x) * data->ray.dd.x;
+		game->ray.step_x = 1;
+		game->ray.sd.x = (game->map.x + 1.0 - game->pl.pos.x) * game->ray.dd.x;
 	}
-	if (data->ray.ray_dir.y < 0)
+	if (game->ray.ray_dir.y < 0)
 	{
-		data->ray.step_y = -1;
-		data->ray.sd.y = (data->pl.pos.y - data->map.y) * data->ray.dd.y;
+		game->ray.step_y = -1;
+		game->ray.sd.y = (game->pl.pos.y - game->map.y) * game->ray.dd.y;
 	}
 	else
 	{
-		data->ray.step_y = 1;
-		data->ray.sd.y = (data->map.y + 1.0 - data->pl.pos.y) * data->ray.dd.y;
+		game->ray.step_y = 1;
+		game->ray.sd.y = (game->map.y + 1.0 - game->pl.pos.y) * game->ray.dd.y;
 	}
 }
 
-void    dda_algo(t_all *all) // алгоритм DDA-линий
+void    dda_algo(t_all *game) // алгоритм DDA-линий
 {
-	while (all->ray.hit == 0)
+	while (game->ray.hit == 0)
 	{
-		if (all->ray.sd.x < all->ray.sd.y)
+		if (game->ray.sd.x < game->ray.sd.y)
 		{
-			all->ray.sd.x += all->ray.dd.x;
-			all->map.x += all->ray.step_x;
-			all->ray.side = 0;
+			game->ray.sd.x += game->ray.dd.x;
+			game->map.x += game->ray.step_x;
+			game->ray.side = 0;
 		}
 		else
 		{
-			all->ray.sd.y += all->ray.dd.y;
-			all->map.y += all->ray.step_y;
-			all->ray.side = 1;
+			game->ray.sd.y += game->ray.dd.y;
+			game->map.y += game->ray.step_y;
+			game->ray.side = 1;
 		}
-		if (all->map.map[(int)(all->map.y)][(int)(all->map.x)] == '1')
-			all->ray.hit = 1;
+		if (game->map.map[(int)(game->map.y)][(int)(game->map.x)] == '1')
+			game->ray.hit = 1;
 	}
 }
 
-void	calculations(t_all *all) // абсолютно не понимаю  как мы к этому пришли, но все формулы с гайда на рейкастинг)))))
+void	calculations(t_all *game) // абсолютно не понимаю  как мы к этому пришли, но все формулы с гайда на рейкастинг)))))
 {
-	if (all->ray.side == 0)
-		all->ray.wall_dist = (all->ray.sd.x - all->ray.dd.x);
+	if (game->ray.side == 0)
+		game->ray.wall_dist = (game->ray.sd.x - game->ray.dd.x);
 	else
-		all->ray.wall_dist = (all->ray.sd.y - all->ray.dd.y);
-	all->ray.height = (int)(W_HEIGHT / all->ray.wall_dist);
-	all->ray.start = (-(all->ray.height) / 2 + W_HEIGHT / 2);
-	if (all->ray.start < 0)
-		all->ray.start = 0;
-	all->ray.end = (all->ray.height / 2 + W_HEIGHT / 2);
-	if (all->ray.end >= W_HEIGHT)
-		all->ray.end = (W_HEIGHT - 1);
+		game->ray.wall_dist = (game->ray.sd.y - game->ray.dd.y);
+	game->ray.height = (int)(W_HEIGHT / game->ray.wall_dist);
+	game->ray.start = (-(game->ray.height) / 2 + W_HEIGHT / 2);
+	if (game->ray.start < 0)
+		game->ray.start = 0;
+	game->ray.end = (game->ray.height / 2 + W_HEIGHT / 2);
+	if (game->ray.end >= W_HEIGHT)
+		game->ray.end = (W_HEIGHT - 1);
 }
 
-void init_raycast(t_all *data, int x) // функции вычисления лучей (https://lodev.org/cgtutor/raycasting.html)
+void init_raycast(t_all *game, int x) // функции вычисления лучей (https://lodev.org/cgtutor/raycasting.html)
 {
-	data->ray.camera_x = (2.0 * x / (double)(W_WIDTH - 1.0));
-	data->ray.ray_dir.x = data->pl.dir.x + data->ray.plane.x * data->ray.camera_x; // вернул инцииализацию плоскостей в pars_nswe.c
-	data->ray.ray_dir.y = data->pl.dir.y + data->ray.plane.y * data->ray.camera_x;
-	data->map.x = (int)(data->pl.pos.x);
-	data->map.y = (int)(data->pl.pos.y);
-	data->ray.dd.x = fabs(1.0 / data->ray.ray_dir.x);
-	data->ray.dd.y = fabs(1.0 / data->ray.ray_dir.y);
-	data->ray.hit = 0;
-	side_dist(data);
-	dda_algo(data);
-	calculations(data);
+	game->ray.camera_x = ((2.0 * x / (double)(W_WIDTH)) - 1.0);
+	game->ray.ray_dir.x = game->pl.dir.x + game->ray.plane.x * game->ray.camera_x; // вернул инцииализацию плоскостей в pars_nswe.c
+	game->ray.ray_dir.y = game->pl.dir.y + game->ray.plane.y * game->ray.camera_x;
+	game->map.x = (int)(game->pl.pos.x);
+	game->map.y = (int)(game->pl.pos.y);
+	game->ray.dd.x = fabs(1.0 / game->ray.ray_dir.x);
+	game->ray.dd.y = fabs(1.0 / game->ray.ray_dir.y);
+	game->ray.hit = 0;
+	side_dist(game);
+	dda_algo(game);
+	calculations(game);
 }

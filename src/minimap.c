@@ -44,5 +44,6 @@ void	draw_mmap(t_all *game)
 		}
 		i++;
 	}
-	draw_pixel(game, game->pl.pos.y, game->pl.pos.x, 0x27CE06);
+	//while (1)
+		draw_pixel(game, game->pl.pos.y, game->pl.pos.x, 0x27CE06);
 }

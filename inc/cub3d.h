@@ -2,6 +2,7 @@
 #ifndef CUB3D_CUB3D_H
 # define CUB3D_CUB3D_H
 
+#include <X11/X.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -30,8 +31,8 @@ void	set_pl_pos(t_all *all, int nswe, double i, double j);
 int		game_start(t_all *game);
 
 /*raycast*/
-void    draw_location(t_all *data);
-void    init_raycast(t_all *data, int x);
+void    draw_location(t_all *game);
+void    init_raycast(t_all *game, int x);
 
 /*util*/
 int		key_hook(int key, t_all *game);
