@@ -31,7 +31,7 @@ void	init_mlx(t_all *game);
 void	init_hooks(t_all *game);
 /*parsing*/
 void	pars_data(char *path, t_all *game);
-void	pars_nswe(char *line, t_all *game);
+void	pars_walls(char *line, t_all *game);
 void	pars_fc(char *line, t_all *game);
 void	pars_map(char *line, int i, t_all *game);
 void	set_pl_pos(t_all *all, int nswe, double i, double j);
@@ -49,5 +49,7 @@ void	my_pixel_put(t_all *game, int x, int y, int color);
 void	draw_intro(t_all *game);
 void	draw_mmap(t_all *game);
 void	draw_pixel(t_all *all, int i, int j, int color);
+
+void	check_map_close(t_all *game);
 
 #endif

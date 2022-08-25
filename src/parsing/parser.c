@@ -12,7 +12,7 @@
 
 #include "cub3d.h"
 
-void	find_nswe(t_all *game)
+void	check_pl(t_all *game)
 {
 	double	i;
 	double	j;
@@ -26,7 +26,7 @@ void	find_nswe(t_all *game)
 		j = -1;
 		while (game->map.map[(int)i][(int)++j])
 		{
-			nswe = game->map.map[(int)i][(int)j];
+			nswe = (int)game->map.map[(int)i][(int)j];
 			if (nswe == 'N' || nswe == 'S' || nswe == 'W' || nswe == 'E')
 			{
 				count++;
@@ -47,10 +47,10 @@ void	pars_line(char *line, t_all *game)
 
 	i = 0;
 	if (line[0] == 'N' || line[0] == 'S' || line[0] == 'W' || line[0] == 'E')
-		pars_nswe(line, game);
-	else if (game->map.north == NULL || game->map.south == NULL || \
-	game->map.west == NULL || game->map.east == NULL)
-		ft_error("Error: texture not found!\n");
+		pars_walls(line, game);
+//	else if (game->map.north == NULL || game->map.south == NULL || \
+//	game->map.west == NULL || game->map.east == NULL)
+//		ft_error("Error: texture not found!\n");
 	if (line[0] == 'F' || line[0] == 'C')
 		pars_fc(line, game);
 	while (ft_isspace(line[i]))
@@ -77,6 +77,7 @@ void	pars_data(char *path, t_all *game)
 		|| game->map.west == NULL || game->map.east == NULL
 		|| game->map.floor == -1 || game->map.ceiling == -1)
 		ft_error("Error: NSWE/FC fail\n");
-	find_nswe(game);
+	check_pl(game);
+	check_map_close(game);
 	close(fd);
 }

@@ -92,7 +92,7 @@ char	*get_text_addr(t_all *game, char *line)
 	return (0);
 }
 
-void	pars_nswe(char *line, t_all *game)
+void	pars_walls(char *line, t_all *game)
 {
 	if (ft_strncmp(line, "NO ", 3) == 0 && game->map.north == NULL)
 		game->map.north = get_text_addr(game, line + 3);

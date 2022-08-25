@@ -33,7 +33,7 @@ void	init_data(t_all *game)
 	game->ray.plane.y = 0;
 }
 
-void init_mlx(t_all *game)
+void init_mlx(t_all *game) // add check
 {
 	game->mlx = mlx_init();
 	game->win = mlx_new_window(game->mlx, W_WIDTH, W_HEIGHT, "cub3d");
