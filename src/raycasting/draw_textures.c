@@ -10,13 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//
-// Created by user on 24.08.22.
-//
-
 #include "cub3d.h"
-
-
 
 void	pre_processing(t_all *game)
 {
@@ -26,15 +20,15 @@ void	pre_processing(t_all *game)
 		wall_x = game->pl.pos.y + game->ray.wall_dist * game->ray.ray_dir.y;
 	else
 		wall_x = game->pl.pos.x + game->ray.wall_dist * game->ray.ray_dir.x;
-	wall_x -= floor(wall_x); // ЭТА ФУНКЦИЯ Я НЕ ПОНИМАЮ ЧТО С НЕЙ, пришлось из-за нее в мейк отдельный флаг добавлять, я когда завтра текстуры делать буду наверное напишу альтернативу
+	wall_x -= floor(wall_x);
 	game->wall.tex_x = (int)(wall_x * (double)(T_WIDTH));
 	if (game->ray.side == 0 && game->ray.ray_dir.x > 0)
 		game->wall.tex_x = T_WIDTH - game->wall.tex_x - 1;
 	if (game->ray.side == 1 && game->ray.ray_dir.y < 0)
 		game->wall.tex_x = T_WIDTH - game->wall.tex_x - 1;
 	game->wall.step = 1.0 * T_WIDTH / game->ray.height;
-	game->wall.tex_pos = (game->ray.start - W_HEIGHT / 2 + game->ray.height / 2)
-						 * game->wall.step;
+	game->wall.tex_pos = (game->ray.start - W_HEIGHT / 2 + \
+	game->ray.height / 2) * game->wall.step;
 }
 
 int	texturing(t_all *game, unsigned int *color)
@@ -42,7 +36,7 @@ int	texturing(t_all *game, unsigned int *color)
 	if (game->ray.side == 0)
 	{
 		if (game->ray.ray_dir.x >= 0)
-			*color = ((unsigned int *)(game->map.east)) // to addr no path
+			*color = ((unsigned int *)(game->map.east))
 			[T_HEIGHT * game->wall.tex_y + game->wall.tex_x];
 		else
 			*color = ((unsigned int *)(game->map.west))
@@ -60,7 +54,7 @@ int	texturing(t_all *game, unsigned int *color)
 	return (*color);
 }
 
-void	textures(t_all *game, int x) // этот кусок кода и выше абсолютно не мои, они здесь для проверки вычислений
+void	textures(t_all *game, int x)
 {
 	int				y;
 	unsigned int	color;
@@ -77,9 +71,9 @@ void	textures(t_all *game, int x) // этот кусок кода и выше а
 	}
 }
 
-void draw_location(t_all *game)
+void	draw_location(t_all *game)
 {
-	int x;
+	int	x;
 
 	x = -1;
 	while (++x < W_WIDTH)

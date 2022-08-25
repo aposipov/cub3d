@@ -10,13 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//
-// Created by user on 24.08.22.
-//
-
 #include "cub3d.h"
 
-void side_dist(t_all *game) // вычисление боковой дистанции
+void	side_dist(t_all *game)
 {
 	if (game->ray.ray_dir.x < 0)
 	{
@@ -40,7 +36,7 @@ void side_dist(t_all *game) // вычисление боковой дистан�
 	}
 }
 
-void    dda_algo(t_all *game) // алгоритм DDA-линий
+void	dda_algo(t_all *game)
 {
 	while (game->ray.hit == 0)
 	{
@@ -61,7 +57,7 @@ void    dda_algo(t_all *game) // алгоритм DDA-линий
 	}
 }
 
-void	calculations(t_all *game) // абсолютно не понимаю  как мы к этому пришли, но все формулы с гайда на рейкастинг)))))
+void	calculations(t_all *game)
 {
 	if (game->ray.side == 0)
 		game->ray.wall_dist = (game->ray.sd.x - game->ray.dd.x);
@@ -76,11 +72,13 @@ void	calculations(t_all *game) // абсолютно не понимаю  как
 		game->ray.end = (W_HEIGHT - 1);
 }
 
-void init_raycast(t_all *game, int x) // функции вычисления лучей (https://lodev.org/cgtutor/raycasting.html)
+void	init_raycast(t_all *game, int x)
 {
 	game->ray.camera_x = ((2.0 * x / (double)(W_WIDTH)) - 1.0);
-	game->ray.ray_dir.x = game->pl.dir.x + game->ray.plane.x * game->ray.camera_x; // вернул инцииализацию плоскостей в pars_nswe.c
-	game->ray.ray_dir.y = game->pl.dir.y + game->ray.plane.y * game->ray.camera_x;
+	game->ray.ray_dir.x = game->pl.dir.x + game->ray.plane.x * \
+	game->ray.camera_x;
+	game->ray.ray_dir.y = game->pl.dir.y + game->ray.plane.y * \
+	game->ray.camera_x;
 	game->map.x = (int)(game->pl.pos.x);
 	game->map.y = (int)(game->pl.pos.y);
 	game->ray.dd.x = fabs(1.0 / game->ray.ray_dir.x);

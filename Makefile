@@ -18,7 +18,6 @@ MLXFLAG =	-lmlx -lX11 -lXext
 INCFLAG = 	-I ./inc/ -I ./libft/inc
 HEADER = 	./inc/
 
-			# NIKITA start.c line 9 "./xpm/logo_cub.xpm"
 SRC =		src/main.c\
 			src/gnl/get_next_line.c src/gnl/get_next_line_utils.c\
 			src/init.c src/start.c\
