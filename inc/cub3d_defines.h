@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #ifndef CUB3D_DEFINES_H
 # define CUB3D_DEFINES_H
 
@@ -27,8 +25,6 @@
 # define KEY_ESC			65307
 # define KEY_SPACE			32
 # define KEY_ENTER			65293
-
-# define CEL_SIZE 6
 # define W_WIDTH 1920 // 1280/1920
 # define W_HEIGHT 1080 // 720/1080
 # define T_WIDTH 64
@@ -36,4 +32,4 @@
 # define RS 0.3
 # define MS 0.25
 
-#endif //CUB3D_CUB3D_DEFINES_H
+#endif

@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//
-// Created by user on 15.08.22.
-//
-
 #ifndef CUB3D_STRUCTS_H
 # define CUB3D_STRUCTS_H
 
@@ -83,12 +79,12 @@ typedef struct s_all
 	void	*win;
 	void	*intro;
 	int		intro_w;
-	int 	intro_h;
+	int		intro_h;
 	t_data	img;
 	t_map	map;
 	t_pl	pl;
 	t_ray	ray;
-	t_wall 	wall;
+	t_wall	wall;
 }	t_all;
 
 #endif
