@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//
-// Created by user on 22.08.22.
-//
-
 #include "cub3d.h"
 
 void	draw_pixel(t_all *all, int i, int j, int color)
@@ -56,6 +52,5 @@ void	draw_mmap(t_all *game)
 		}
 		i++;
 	}
-	//while (1)
-		draw_pixel(game, game->pl.pos.y, game->pl.pos.x, 0x27CE06);
+	draw_pixel(game, game->pl.pos.y, game->pl.pos.x, 0x27CE06);
 }

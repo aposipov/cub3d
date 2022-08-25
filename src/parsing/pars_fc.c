@@ -10,15 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//
-// Created by user on 21.08.22.
-//
-
 #include "cub3d.h"
 
 int	torgb(int r, int g, int b)
 {
-	return (r << 16 | g << 8 | b); // 1 << 24 |
+	return (r << 16 | g << 8 | b);
 }
 
 int	rgb(char *line)
@@ -28,14 +24,13 @@ int	rgb(char *line)
 	int		rgb;
 
 	i = 0;
-	while (ft_isspace(line[i])) // line[i] == ' ' || line[i] == '\t'
+	while (ft_isspace(line[i]))
 		i++;
 	colors = ft_split(line, ',');
 	if (!colors)
-		ft_error(RED"Error: malloc fail\n"NC);
-	rgb = torgb(ft_atoi(colors[0]),
-				ft_atoi(colors[1]),
-				ft_atoi(colors[2]));
+		ft_error("Error: malloc fail\n");
+	rgb = torgb(ft_atoi(colors[0]), \
+	ft_atoi(colors[1]), ft_atoi(colors[2]));
 	free(colors);
 	return (rgb);
 }
@@ -54,7 +49,7 @@ void	check_comma(const char *line)
 		i++;
 	}
 	if (comma != 2)
-		ft_error(RED"Error: wrong color\n"NC);
+		ft_error("Error: wrong color\n");
 }
 
 void	pars_fc(char *line, t_all *game)
@@ -62,17 +57,15 @@ void	pars_fc(char *line, t_all *game)
 	if ((ft_strncmp(line, "F ", 2) == 0) && game->map.floor == -1)
 	{
 		check_comma(line);
-		//printf(" col = %s\n", line); //
 		game->map.floor = rgb(line);
-		printf("fl = %d\n", game->map.floor);
+		printf("fl = %d\n", game->map.floor); //
 	}
 	else if ((ft_strncmp(line, "C ", 2) == 0) && game->map.ceiling == -1)
 	{
 		check_comma(line);
-		//printf(" col = %s\n", line); //
 		game->map.ceiling = rgb(line);
-		printf("cl = %d\n", game->map.ceiling);
+		printf("cl = %d\n", game->map.ceiling); //
 	}
 	else
-		ft_error(RED"Error: color F/C not found\n"NC);
+		ft_error("Error: color F/C not found\n");
 }

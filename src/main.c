@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//
-// Created by user on 14.08.22.
-//
-
 #include "cub3d.h"
 
 void	ft_error(char *str)
@@ -22,18 +18,18 @@ void	ft_error(char *str)
 	exit(EXIT_FAILURE);
 }
 
-static void open_path(char const *path)
+static void	open_path(char const *path)
 {
-	int fd;
+	int	fd;
 
 	fd = 0;
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
-		ft_error("file not exist\n");
+		ft_error("Error: file not exist\n");
 	close(fd);
 }
 
-static void check_path(char const *path)
+static void	check_path(char const *path)
 {
 	int	i;
 
@@ -43,8 +39,8 @@ static void check_path(char const *path)
 	if (!(path[i - 1] == 'b' && path[i - 2] == 'u' && path[i - 3] == 'c' && \
 	path[i - 4] == '.' && path[i -5] >= 48))
 	{
-		printf("check you path! -> %s\n", path);
-		exit(0);
+		printf(RED"Error: check you path! -> %s\n"NC, path);
+		exit(1);
 	}
 	open_path(path);
 }
@@ -58,16 +54,17 @@ int	main(int argc, char **argv)
 		check_path(argv[1]);
 		init_data(&game);
 		init_mlx(&game);
-		pars_data(argv[1], &game);
 		init_hooks(&game);
+		pars_data(argv[1], &game);
 		draw_intro(&game);
 		mlx_loop_hook(game.mlx, game_start, &game);
 		mlx_loop(game.mlx);
 	}
 	else
 	{
-		printf("should be argument the path to map!\n");
-		printf("./cub3d ./map.cub\n");
+		printf(RED"Error: should be argument the path to map!\n"NC);
+		printf(RED"./cub3d ./map.cub\n"NC);
+		exit(1);
 	}
 	return (0);
 }
