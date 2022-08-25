@@ -17,7 +17,7 @@ static void open_path(char const *path)
 	fd = 0;
 	fd = open(path, O_RDONLY);
 	if (fd < 0)
-		printf("file not exist\n");
+		ft_error("file not exist\n");
 	close(fd);
 }
 
@@ -44,13 +44,12 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		check_path(argv[1]);
-		init_data(&game); // data / test
+		init_data(&game);
 		init_mlx(&game);
 		pars_data(argv[1], &game);
-		draw_intro(&game);
-		mlx_loop_hook(game.mlx, game_start, &game); // loop or not ?
 		init_hooks(&game);
-//		game_start(&game); // in loop ?
+		draw_intro(&game);
+		mlx_loop_hook(game.mlx, game_start, &game);
 		mlx_loop(game.mlx);
 	}
 	else
