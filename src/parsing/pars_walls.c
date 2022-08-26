@@ -82,7 +82,7 @@ char	*get_text_addr(t_all *game, char *line)
 	i = 0;
 	while (ft_isspace(line[i]))
 		i++;
-	if (line[i] == '.' && line[i + 1] == '.' && line [i + 2] == '/')
+	if (line[i] == '.' && line[i + 1] == '/') // && line [i + 2] == '/')
 	{
 		tmp = del_n(line);
 		printf("tmp = %s\n", tmp); //

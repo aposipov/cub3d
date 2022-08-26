@@ -16,7 +16,7 @@ void	draw_intro(t_all *game)
 {
 	char	*path;
 
-	path = "../xpm/logo_cub.xpm";
+	path = "./xpm/logo_cub.xpm";
 	game->intro = mlx_xpm_file_to_image(game->mlx, path, \
 	&game->intro_w, &game->intro_h);
 	mlx_put_image_to_window(game->mlx, game->win, \

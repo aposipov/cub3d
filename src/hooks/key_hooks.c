@@ -12,34 +12,6 @@
 
 #include "cub3d.h"
 
-void	key_hook_lr(int key, t_all *game)
-{
-	double	old_dir_x;
-	double	old_plane_x;
-
-	old_dir_x = game->pl.dir.x;
-	old_plane_x = game->ray.plane.x;
-	if (key == KEY_LEFT)
-	{
-		game->pl.dir.x = game->pl.dir.x * cos (-RS) - game->pl.dir.y * \
-		sin (-RS);
-		game->pl.dir.y = old_dir_x * sin(-RS) + game->pl.dir.y * cos(-RS);
-		game->ray.plane.x = game->ray.plane.x * cos(-RS) - \
-		game->ray.plane.y * sin (-RS);
-		game->ray.plane.y = old_plane_x * sin(-RS) + game->ray.plane.y * \
-		cos (-RS);
-	}
-	if (key == KEY_RIGHT)
-	{
-		game->pl.dir.x = game->pl.dir.x * cos(RS) - game->pl.dir.y * sin(RS);
-		game->pl.dir.y = old_dir_x * sin(RS) + game->pl.dir.y * cos(RS);
-		game->ray.plane.x = game->ray.plane.x * cos(RS) - \
-		game->ray.plane.y * sin (RS);
-		game->ray.plane.y = old_plane_x * sin(RS) + \
-		game->ray.plane.y * cos (RS);
-	}
-}
-
 void	key_hook_ad(int key, t_all *game)
 {
 	if (key == KEY_A)
@@ -102,6 +74,8 @@ int	key_hook(int key, t_all *game)
 		key_hook_ad(key, game);
 	else if (key == KEY_LEFT || key == KEY_RIGHT)
 		key_hook_lr(key, game);
-	printf("key = %d\n", key); // del
+//	printf("key = %d\n", key); // del
 	return (0);
 }
+
+
