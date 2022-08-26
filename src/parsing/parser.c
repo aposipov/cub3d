@@ -48,7 +48,7 @@ void	pars_line(char *line, t_all *game)
 	i = 0;
 	if (line[0] == 'N' || line[0] == 'S' || line[0] == 'W' || line[0] == 'E')
 		pars_walls(line, game);
-//	else if (game->map.north == NULL || game->map.south == NULL || \
+//	else if (game->map.north == NULL || game->map.south == NULL ||
 //	game->map.west == NULL || game->map.east == NULL)
 //		ft_error("Error: texture not found!\n");
 	if (line[0] == 'F' || line[0] == 'C')
