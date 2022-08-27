@@ -46,6 +46,7 @@ typedef struct s_pl
 {
 	t_point	pos;
 	t_point	dir;
+	int mouse_x;
 }			t_pl;
 
 typedef struct s_ray

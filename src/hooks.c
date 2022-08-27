@@ -12,6 +12,21 @@
 
 #include "cub3d.h"
 
+void	key_hook_lr(int key, t_all *game); //
+
+int	mouse_hook(int x, int y, t_all *game)
+{
+	(void)y;
+
+	mlx_mouse_hide(game->mlx, game->win);
+	if (x > game->pl.mouse_x)
+		key_hook_lr(KEY_RIGHT, game);
+	else if (x < game->pl.mouse_x)
+		key_hook_lr(KEY_LEFT, game);
+	game->pl.mouse_x = x;
+	return (0);
+}
+
 void	key_hook_lr(int key, t_all *game)
 {
 	double	old_dir_x;

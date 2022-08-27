@@ -40,9 +40,11 @@ int		game_start(t_all *game);
 /*raycast*/
 void	draw_location(t_all *game);
 void	init_raycast(t_all *game, int x);
-/*util*/
+/*hooks*/
 int		key_hook(int key, t_all *game);
 int		exit_hook(void);
+int		mouse_hook(int x, int y, t_all *game); //
+/*util*/
 void	ft_error(char *str);
 char	*del_n(char *line);
 void	my_pixel_put(t_all *game, int x, int y, int color);
@@ -51,5 +53,7 @@ void	draw_mmap(t_all *game);
 void	draw_pixel(t_all *all, int i, int j, int color);
 
 void	check_map_close(t_all *game);
+
+
 
 #endif
