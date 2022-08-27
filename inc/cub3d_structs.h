@@ -81,6 +81,7 @@ typedef struct s_all
 	void	*intro;
 	int		intro_w;
 	int		intro_h;
+    int     map_flag;
 	t_data	img;
 	t_map	map;
 	t_pl	pl;

@@ -31,6 +31,7 @@ void	init_data(t_all *game)
 	game->pl.dir.y = 0;
 	game->ray.plane.x = 0;
 	game->ray.plane.y = 0;
+    game->map_flag = 0;
 }
 
 void init_mlx(t_all *game) // add check

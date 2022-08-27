@@ -67,7 +67,12 @@ int	key_hook(int key, t_all *game)
 	if (key == KEY_ESC)
 		exit_hook();
 	else if (key == KEY_M)
-		draw_mmap(game);
+    {
+        if (game->map_flag == 0)
+            game->map_flag = 1;
+        else
+            game->map_flag = 0;
+    }
 	else if (key == KEY_W || key == KEY_S)
 		key_hook_ws(key, game);
 	else if (key == KEY_A || key == KEY_D)
