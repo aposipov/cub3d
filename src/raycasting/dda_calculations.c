@@ -52,7 +52,8 @@ void	dda_algo(t_all *game)
 			game->map.y += game->ray.step_y;
 			game->ray.side = 1;
 		}
-		if (game->map.map[(int)(game->map.y)][(int)(game->map.x)] == '1')
+		if (game->map.map[(int)(game->map.y)][(int)(game->map.x)] == '1' || \
+            game->map.map[(int)(game->map.y)][(int)(game->map.x)] == 'D')
 			game->ray.hit = 1;
 	}
 }

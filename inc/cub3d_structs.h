@@ -74,6 +74,15 @@ typedef struct s_wall
 	double	step;
 }			t_wall;
 
+typedef struct s_door
+{
+    int     tex_x;
+    int     tex_y;
+    double  tex_pos;
+    double  step;
+    int     door_flag;
+}   t_door;
+
 typedef struct s_all
 {
 	void	*mlx;
