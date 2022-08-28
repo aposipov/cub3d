@@ -42,7 +42,7 @@ void	key_hook_ws(int key, t_all *game)
 			[(int)(game->pl.pos.x + game->pl.dir.x * MS)] == '0')
 			game->pl.pos.x += game->pl.dir.x * MS;
 		if (game->map.map[(int)(game->pl.pos.y + game->pl.dir.y * MS)]
-			[(int)(game->pl.pos.x)] == '0')
+			[(int)(game->pl.pos.x)]  == '0')
 			game->pl.pos.y += game->pl.dir.y * MS;
 	}
 	if (key == KEY_S)

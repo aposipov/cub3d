@@ -30,6 +30,7 @@ typedef struct s_map
 	char	*south;
 	char	*west;
 	char	*east;
+    char    *door;
 	int		floor;
 	int		ceiling;
 	int		x;
@@ -96,6 +97,7 @@ typedef struct s_all
 	t_pl	pl;
 	t_ray	ray;
 	t_wall	wall;
+    t_door  door;
 }	t_all;
 
 #endif

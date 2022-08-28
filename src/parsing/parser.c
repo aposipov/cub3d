@@ -46,7 +46,7 @@ void	pars_line(char *line, t_all *game)
 	int	i;
 
 	i = 0;
-	if (line[0] == 'N' || line[0] == 'S' || line[0] == 'W' || line[0] == 'E')
+	if (line[0] == 'N' || line[0] == 'S' || line[0] == 'W' || line[0] == 'E' || line[0] == 'D')
 		pars_walls(line, game);
 //	else if (game->map.north == NULL || game->map.south == NULL ||
 //	game->map.west == NULL || game->map.east == NULL)

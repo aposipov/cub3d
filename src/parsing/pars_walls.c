@@ -102,4 +102,6 @@ void	pars_walls(char *line, t_all *game)
 		game->map.west = get_text_addr(game, line + 3);
 	else if (ft_strncmp(line, "EA ", 3) == 0 && game->map.east == NULL)
 		game->map.east = get_text_addr(game, line + 3);
+    else if (ft_strncmp(line, "DO ", 3) == 0 && game->map.door == NULL)
+        game->map.door = get_text_addr(game, line + 3);
 }
