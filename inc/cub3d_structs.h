@@ -31,6 +31,7 @@ typedef struct s_map
 	char	*west;
 	char	*east;
     char    *door;
+    char    *o_door;
 	int		floor;
 	int		ceiling;
 	int		x;

@@ -25,6 +25,7 @@ void	init_data(t_all *game)
 	game->map.west = NULL;
 	game->map.east = NULL;
     game->map.door = NULL;
+    game->map.o_door = NULL;
 	game->map.height = 0;
 	game->pl.pos.x = 0;
 	game->pl.pos.y = 0;

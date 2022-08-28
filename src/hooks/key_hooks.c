@@ -17,19 +17,27 @@ void	key_hook_ad(int key, t_all *game)
 	if (key == KEY_A)
 	{
 		if (game->map.map[(int)(game->pl.pos.y)] \
-		[(int)(game->pl.pos.x - game->ray.plane.x * MS)] == '0')
+		[(int)(game->pl.pos.x - game->ray.plane.x * MS)] == '0' ||
+        game->map.map[(int)(game->pl.pos.y)] \
+		[(int)(game->pl.pos.x - game->ray.plane.x * MS)] == '3')
 			game->pl.pos.x -= game->ray.plane.x * MS;
 		if (game->map.map[(int)(game->pl.pos.y - game->ray.plane.y * MS)] \
-		[(int)(game->pl.pos.x)] == '0')
+		[(int)(game->pl.pos.x)] == '0' ||
+        game->map.map[(int)(game->pl.pos.y - game->ray.plane.y * MS)] \
+		[(int)(game->pl.pos.x)] == '3')
 			game->pl.pos.y -= game->ray.plane.y * MS;
 	}
 	if (key == KEY_D)
 	{
 		if (game->map.map[(int)(game->pl.pos.y)] \
-		[(int)(game->pl.pos.x + game->ray.plane.x * MS)] == '0')
+		[(int)(game->pl.pos.x + game->ray.plane.x * MS)] == '0' ||
+        game->map.map[(int)(game->pl.pos.y)] \
+		[(int)(game->pl.pos.x + game->ray.plane.x * MS)] == '3')
 			game->pl.pos.x += game->ray.plane.x * MS;
 		if (game->map.map[(int)(game->pl.pos.y + game->ray.plane.y * MS)] \
-		[(int)(game->pl.pos.x)] == '0')
+		[(int)(game->pl.pos.x)] == '0' ||
+        game->map.map[(int)(game->pl.pos.y + game->ray.plane.y * MS)] \
+		[(int)(game->pl.pos.x)] == '3')
 			game->pl.pos.y += game->ray.plane.y * MS;
 	}
 }
@@ -39,21 +47,37 @@ void	key_hook_ws(int key, t_all *game)
 	if (key == KEY_W)
 	{
 		if (game->map.map[(int)(game->pl.pos.y)]
-			[(int)(game->pl.pos.x + game->pl.dir.x * MS)] == '0')
+			[(int)(game->pl.pos.x + game->pl.dir.x * MS)] == '0' ||
+            game->map.map[(int)(game->pl.pos.y)]
+            [(int)(game->pl.pos.x + game->pl.dir.x * MS)] == '3')
 			game->pl.pos.x += game->pl.dir.x * MS;
 		if (game->map.map[(int)(game->pl.pos.y + game->pl.dir.y * MS)]
-			[(int)(game->pl.pos.x)]  == '0')
+			[(int)(game->pl.pos.x)]  == '0' ||
+            game->map.map[(int)(game->pl.pos.y + game->pl.dir.y * MS)]
+            [(int)(game->pl.pos.x)]  == '3')
 			game->pl.pos.y += game->pl.dir.y * MS;
 	}
 	if (key == KEY_S)
 	{
 		if (game->map.map[(int)(game->pl.pos.y)]
-			[(int)(game->pl.pos.x - game->pl.dir.x * MS)] == '0')
+			[(int)(game->pl.pos.x - game->pl.dir.x * MS)] == '0' ||
+            game->map.map[(int)(game->pl.pos.y)]
+            [(int)(game->pl.pos.x - game->pl.dir.x * MS)] == '3')
 			game->pl.pos.x -= game->pl.dir.x * MS;
 		if (game->map.map[(int)(game->pl.pos.y - game->pl.dir.y * MS)]
-			[(int)(game->pl.pos.x)] == '0')
+			[(int)(game->pl.pos.x)] == '0' ||
+            game->map.map[(int)(game->pl.pos.y - game->pl.dir.y * MS)]
+            [(int)(game->pl.pos.x)] == '3')
 			game->pl.pos.y -= game->pl.dir.y * MS;
 	}
+}
+
+void	doors(t_all *game)
+{
+    if (game->map.map[(int)(game->map.y)][(int)(game->map.x)] == '2')
+        game->map.map[(int)(game->map.y)][(int)(game->map.x)] = '3';
+    else if (game->map.map[(int)(game->map.y)][(int)(game->map.x)] == '3')
+        game->map.map[(int)(game->map.y)][(int)(game->map.x)] = '2';
 }
 
 int	exit_hook(void) // free?
@@ -79,6 +103,8 @@ int	key_hook(int key, t_all *game)
 		key_hook_ad(key, game);
 	else if (key == KEY_LEFT || key == KEY_RIGHT)
 		key_hook_lr(key, game);
+    else if (KEY_SPACE)
+        doors(game);
 //	printf("key = %d\n", key); // del
 	return (0);
 }
