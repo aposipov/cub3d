@@ -76,29 +76,28 @@ typedef struct s_wall
 	double	step;
 }			t_wall;
 
-typedef struct s_door
+typedef struct s_sprite
 {
-    int     tex_x;
-    int     tex_y;
-    double  tex_pos;
-    double  step;
-    int     door_flag;
-}   t_door;
+    int     x;
+    int     y;
+    float   angle;
+
+}   t_sprite;
 
 typedef struct s_all
 {
-	void	*mlx;
-	void	*win;
-	void	*intro;
-	int		intro_w;
-	int		intro_h;
-    int     map_flag;
-	t_data	img;
-	t_map	map;
-	t_pl	pl;
-	t_ray	ray;
-	t_wall	wall;
-    t_door  door;
+	void	    *mlx;
+	void	    *win;
+	void	    *intro;
+	int		    intro_w;
+	int		    intro_h;
+    int         map_flag;
+	t_data	    img;
+	t_map	    map;
+	t_pl	    pl;
+	t_ray	    ray;
+	t_wall	    wall;
+    t_sprite    sprite;
 }	t_all;
 
 #endif

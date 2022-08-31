@@ -32,4 +32,7 @@
 # define RS 0.20
 # define MS 0.25
 
+# define PI				3.14159265
+# define TWO_PI			6.28316530
+
 #endif
