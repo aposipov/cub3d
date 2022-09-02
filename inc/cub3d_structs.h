@@ -36,12 +36,14 @@ typedef struct s_map
 	int		ceiling;
 	int		x;
 	int		y;
+    int     n_sprites;
 }			t_map;
 
 typedef struct s_point
 {
 	double	x;
 	double	y;
+    int		color;
 }			t_point;
 
 typedef struct s_pl
@@ -76,13 +78,15 @@ typedef struct s_wall
 	double	step;
 }			t_wall;
 
-typedef struct s_sprite
+typedef struct	s_sprite
 {
-    int     x;
-    int     y;
-    float   angle;
-
-}   t_sprite;
+    t_point		*pos;
+    double		angle;
+    double		angle_dif;
+    double		dist;
+    int			height;
+    int			width;
+}				t_sprite;
 
 typedef struct s_all
 {
@@ -97,7 +101,7 @@ typedef struct s_all
 	t_pl	    pl;
 	t_ray	    ray;
 	t_wall	    wall;
-    t_sprite    sprite;
+    t_sprite    *sprite;
 }	t_all;
 
 #endif

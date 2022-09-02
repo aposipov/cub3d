@@ -103,7 +103,7 @@ int	key_hook(int key, t_all *game)
 		key_hook_ad(key, game);
 	else if (key == KEY_LEFT || key == KEY_RIGHT)
 		key_hook_lr(key, game);
-    else if (KEY_SPACE)
+    else if (key == KEY_SPACE)
         doors(game);
 //	printf("key = %d\n", key); // del
 	return (0);
