@@ -56,7 +56,7 @@ int	game_start(t_all *game) //
 {
 	draw_fc(game);
 	draw_location(game);
-    draw_sprites(game);
+    //draw_sprites(game);
     if (game->map_flag == 1)
 	    draw_mmap(game);
 	mlx_put_image_to_window(game->mlx, game->win, \

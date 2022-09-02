@@ -44,8 +44,12 @@ void	init_raycast(t_all *game, int x);
 /*hooks*/
 int		key_hook(int key, t_all *game);
 int     mouse_hook(int x, int y, t_all *all);
-int		exit_hook(void);
+int		exit_hook(t_all *game);
 void	key_hook_lr(int key, t_all *game);
+void	key_hook_w(t_all *game);
+void	key_hook_a(t_all *game);
+void	key_hook_s(t_all *game);
+void	key_hook_d(t_all *game);
 
 /*util*/
 void	ft_error(char *str);

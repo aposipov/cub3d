@@ -47,11 +47,7 @@ void init_mlx(t_all *game) // add check
 
 void	init_hooks(t_all *game)
 {
-	//mlx_key_hook(game->win, key_hook, game);
 	mlx_hook(game->win, 2, 1L<<0, key_hook, game); // faster?
-	//mlx_mouse_hook(game->win, key_hook, game);
-	//mlx_mouse_show(game->mlx, game->win); // for what
-	//mlx_mouse_move(game->mlx, game->win, 300,300); // for what
-	mlx_hook(game->win, 17, 0, exit_hook, 0);
+	mlx_hook(game->win, 17, 0, exit_hook, game);
     mlx_hook(game->win, 6, 1L<<6, mouse_hook, game);
 }
