@@ -24,6 +24,8 @@ char	*addr_to_path(t_all *game, char *path)
 	if (img == NULL || x != T_WIDTH || y != T_HEIGHT)
 		ft_error("Error: wrong xpm file\n");
 	adr = mlx_get_data_addr(img, &x, &y, &i);
+//	free(img);
+	free(path); // del n
 	return (adr);
 }
 
@@ -71,6 +73,7 @@ char	*del_n(char *line)
 		tmp[i] = line[i];
 		i++;
 	}
+	tmp[i] = '\0';
 	return (tmp);
 }
 

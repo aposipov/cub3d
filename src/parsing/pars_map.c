@@ -12,6 +12,17 @@
 
 #include "cub3d.h"
 
+void	free_tmp(char **arr)
+{
+//	int	i;
+//
+//	i = 0;
+		while (*arr)
+			free(*arr++);
+		arr = NULL;
+
+}
+
 int	check_line(char *line, int i)
 {
 	while (line[i])
@@ -51,6 +62,8 @@ void	pars_map(char *line, int i, t_all *game)
 		free(game->map.map);
 	game->map.map = tmp;
 	printf("map = %s\n", game->map.map[h]); //
+	free(line); // del n
+//	free_tmp(tmp);
 }
 // check position
 // check map close

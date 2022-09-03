@@ -70,6 +70,7 @@ void	pars_data(char *path, t_all *game)
 	while (line != NULL)
 	{
 		pars_line(line, game);
+		free(line); //
 		line = get_next_line(fd);
 		if (line == NULL)
 			break ;

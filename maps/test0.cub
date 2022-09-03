@@ -1,7 +1,9 @@
-NO ../xpm/wall.xpm
-SO ../xpm/wall.xpm
-WE ../xpm/wall.xpm
-EA ../xpm/wall.xpm
+NO ./xpm/no.xpm
+SO ./xpm/so.xpm
+WE ./xpm/we.xpm
+EA ./xpm/ea.xpm
+DO ./xpm/cl_door.xpm
+OD ./xpm/o_door.xpm
 
 F 220,100,100
 C 225,30,0

@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		cub3d
+NAME =		cub3D
 LIBFT_A = 	libft/libft.a
 CC = 		gcc
 WFLAGS = 	-Wall -Wextra -Werror
