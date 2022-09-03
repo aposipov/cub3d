@@ -12,7 +12,7 @@ add_executable(cub3d src/main.c
 		src/init.c src/start.c
 		src/parsing/parser.c src/parsing/pars_walls.c src/parsing/pars_fc.c
 		src/parsing/player.c src/parsing/pars_map.c
-		src/minimap.c src/hooks.c
+		src/minimap.c
 		src/raycasting/dda_calculations.c src/raycasting/draw_textures.c src/parsing/check.c)
 
 set(CMAKE_C_FLAGS  "-lm -lmlx -lXext -lX11")
