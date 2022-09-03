@@ -24,7 +24,8 @@ SRC =		src/main.c\
 			src/parsing/parser.c src/parsing/pars_fc.c src/parsing/pars_map.c\
 			src/parsing/pars_walls.c src/parsing/check.c\
 			src/raycasting/dda_calculations.c src/raycasting/draw_textures.c\
-			src/minimap.c src/hooks.c\
+			src/hooks/key_hooks.c src/hooks/mouse_hooks.c\
+			src/minimap.c
 
 OBJ = 		$(patsubst %.c, %.o, $(SRC))
 
