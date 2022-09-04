@@ -96,6 +96,7 @@ typedef struct s_all
 	int		    intro_w;
 	int		    intro_h;
     int         map_flag;
+	char		**tmp;
 	t_data	    img;
 	t_map	    map;
 	t_pl	    pl;

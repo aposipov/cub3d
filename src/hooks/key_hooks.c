@@ -95,16 +95,19 @@ void	open_the_doors(t_all *game)
 int	exit_hook(t_all *game) // free?
 {
 	printf(GREEN"Exit!\n"NC);
-	(void)game;
-    //mlx_destroy_image(game->mlx, game->img.img);
-    //mlx_destroy_window(game->mlx, game->win);
-    free_tmp(game->map.map);
-//    if(game->map.north)
+	//(void)game;
+    mlx_destroy_image(game->mlx, game->img.img);
+    mlx_destroy_window(game->mlx, game->win);
+    //free_tmp(game->tmp);
+//    if (game->map.north)
+//	{
+//		printf("north = %p\n", game->map.north);
 //		free(game->map.north);
+//	}
 //	else
 //		printf("no!!!!\n");
 	//    free(game->map.south);
-//    free(game->map.west);
+    free(game->map.west);
 //    free(game->map.east);
 //    free(game->map.door);
 //    free(game->map.o_door);

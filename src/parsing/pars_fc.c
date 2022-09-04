@@ -31,7 +31,7 @@ int	rgb(char *line)
 		ft_error("Error: malloc fail\n");
 	rgb = torgb(ft_atoi(colors[0]), \
 	ft_atoi(colors[1]), ft_atoi(colors[2]));
-	free(colors);
+	free_tmp(colors);
 	return (rgb);
 }
 

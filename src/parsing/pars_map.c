@@ -14,14 +14,28 @@
 
 void	free_tmp(char **arr)
 {
+	char **tmp;
+	tmp = arr;
+
+	while (*arr)
+		free(*arr++);
+	free(tmp);
+	tmp = NULL;
+}
+
+//void	free_tmp(char **arr)
+//{
 //	int	i;
 //
 //	i = 0;
-		while (*arr)
-			free(*arr++);
-		arr = NULL;
-
-}
+//	if (arr)
+//	{
+//		while (arr[i])
+//			free(arr[i++]);
+//		free(arr);
+//		arr = NULL;
+//	}
+//}
 
 int	check_line(char *line, int i)
 {
@@ -38,32 +52,32 @@ int	check_line(char *line, int i)
 
 void	pars_map(char *line, int i, t_all *game)
 {
-	char	**tmp;
+	//char	**tmp;
 	int		h;
 
 	h = -1;
 	game->map.height++;
-	tmp = (char **)malloc(sizeof(char *) * (game->map.height + 1));
-	if (!tmp)
+	game->tmp = (char **)malloc(sizeof(char *) * (game->map.height + 1));
+	if (!game->tmp)
 		ft_error("Error: malloc fail\n");
-	tmp[game->map.height] = NULL;
+	game->tmp[game->map.height] = NULL;
 	while (++h < (game->map.height - 1))
-		tmp[h] = ft_strdup(game->map.map[h]);
+		game->tmp[h] = ft_strdup(game->map.map[h]);
 	line = del_n(line);
 	if (check_line(line, i))
-		tmp[h] = ft_strdup(line);
+		game->tmp[h] = ft_strdup(line);
 	else
 	{
-		tmp[h] = NULL;
-		free(tmp); // exit
+		game->tmp[h] = NULL;
+		free(game->tmp); // exit
 		ft_error("Error: invalid map\n");
 	}
 	if (game->map.height > 1)
-		free(game->map.map);
-	game->map.map = tmp;
+		free_tmp(game->map.map);
+	game->map.map = game->tmp;
 	printf("map = %s\n", game->map.map[h]); //
 	free(line); // del n
-//	free_tmp(tmp);
+	//free_tmp (tmp);
 }
 // check position
 // check map close

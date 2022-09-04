@@ -81,5 +81,6 @@ void	pars_data(char *path, t_all *game)
 		ft_error("Error: NSWE/FC fail\n");
 	check_pl(game);
 	check_map_close(game);
+
 	close(fd);
 }
