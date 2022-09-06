@@ -105,25 +105,14 @@ char	*get_text_addr(t_all *game, char *line)
 void	pars_walls(char *line, t_all *game)
 {
 	if (ft_strncmp(line, "NO ", 3) == 0 && game->map.north == NULL)
-	{
 		game->map.north = get_text_addr(game, line + 3);
-		//mlx_destroy_image(game->mlx, game->img.img_t);
-	}
+
 	else if (ft_strncmp(line, "SO ", 3) == 0 && game->map.south == NULL)
-	{
 		game->map.south = get_text_addr(game, line + 3);
-		//mlx_destroy_image(game->mlx, game->img.img_t);
-	}
 	else if (ft_strncmp(line, "WE ", 3) == 0 && game->map.west == NULL)
-	{
 		game->map.west = get_text_addr(game, line + 3);
-		//mlx_destroy_image(game->mlx, game->img.img_t);
-	}
 	else if (ft_strncmp(line, "EA ", 3) == 0 && game->map.east == NULL)
-	{
 		game->map.east = get_text_addr(game, line + 3);
-		//mlx_destroy_image(game->mlx, game->img.img_t);
-	}
     else if (ft_strncmp(line, "DO ", 3) == 0 && game->map.door == NULL)
         game->map.door = get_text_addr(game, line + 3);
     else if (ft_strncmp(line, "OD ", 3) == 0 && game->map.o_door == NULL)

@@ -98,10 +98,9 @@ int	exit_hook(t_all *game) // free?
 	//(void)game;
     mlx_destroy_image(game->mlx, game->img.img);
     mlx_destroy_window(game->mlx, game->win);
-	mlx_destroy_image(game->mlx, game->img.img_t);
+	//mlx_destroy_image(game->mlx, game->img.img_t);
 //    free_tmp(game->img.img_t);
-	free(game->img.img_t);
-
+	//free(game->img.img_t);
 	exit(0);
 }
 
