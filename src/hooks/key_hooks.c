@@ -98,20 +98,10 @@ int	exit_hook(t_all *game) // free?
 	//(void)game;
     mlx_destroy_image(game->mlx, game->img.img);
     mlx_destroy_window(game->mlx, game->win);
-    //free_tmp(game->tmp);
-//    if (game->map.north)
-//	{
-//		printf("north = %p\n", game->map.north);
-//		free(game->map.north);
-//	}
-//	else
-//		printf("no!!!!\n");
-	//    free(game->map.south);
-    free(game->map.west);
-//    free(game->map.east);
-//    free(game->map.door);
-//    free(game->map.o_door);
-//    free(game);
+	mlx_destroy_image(game->mlx, game->img.img_t);
+//    free_tmp(game->img.img_t);
+	free(game->img.img_t);
+
 	exit(0);
 }
 
