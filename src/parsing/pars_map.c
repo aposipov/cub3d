@@ -14,9 +14,9 @@
 
 void	free_tmp(char **arr)
 {
-	char **tmp;
-	tmp = arr;
+	char	**tmp;
 
+	tmp = arr;
 	while (*arr)
 		free(*arr++);
 	free(tmp);
@@ -27,9 +27,11 @@ int	check_line(char *line, int i)
 {
 	while (line[i])
 	{
-		if (line[i] != '1' && line[i] != '0' && line[i] != '2' && line[i] != '3' &&\
-        line[i] != 'N' && line[i] != 'S' && line[i] != 'W' && line[i] != 'E' &&\
-        !ft_isspace(line[i]))
+		if (line[i] != '1' && line[i] != '0' && \
+		line[i] != '2' && line[i] != '3' && \
+		line[i] != 'N' && line[i] != 'S' && \
+		line[i] != 'W' && line[i] != 'E' && \
+		!ft_isspace(line[i]))
 			return (0);
 		i++;
 	}
@@ -38,7 +40,6 @@ int	check_line(char *line, int i)
 
 void	pars_map(char *line, int i, t_all *game)
 {
-	//char	**tmp;
 	int		h;
 
 	h = -1;
@@ -55,14 +56,12 @@ void	pars_map(char *line, int i, t_all *game)
 	else
 	{
 		game->tmp[h] = NULL;
-		free(game->tmp); // exit
+		free(game->tmp);
 		ft_error("Error: invalid map\n");
 	}
 	if (game->map.height > 1)
 		free_tmp(game->map.map);
 	game->map.map = game->tmp;
-	printf("map = %s\n", game->map.map[h]); //
-	free(line); // del n
+	printf("map = %s\n", game->map.map[h]);
+	free(line);
 }
-// check position
-// check map close

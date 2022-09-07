@@ -53,7 +53,7 @@ void	dda_algo(t_all *game)
 			game->ray.side = 1;
 		}
 		if (game->map.map[(int)(game->map.y)][(int)(game->map.x)] == '1' || \
-            game->map.map[(int)(game->map.y)][(int)(game->map.x)] == '2')
+			game->map.map[(int)(game->map.y)][(int)(game->map.x)] == '2')
 			game->ray.hit = 1;
 	}
 }
@@ -80,8 +80,8 @@ void	init_raycast(t_all *game, int x)
 	game->ray.camera_x;
 	game->ray.ray_dir.y = game->pl.dir.y + game->ray.plane.y * \
 	game->ray.camera_x;
-	game->map.x = (int)(game->pl.pos.x); //
-	game->map.y = (int)(game->pl.pos.y); //
+	game->map.x = (int)(game->pl.pos.x);
+	game->map.y = (int)(game->pl.pos.y);
 	game->ray.dd.x = fabs(1.0 / game->ray.ray_dir.x);
 	game->ray.dd.y = fabs(1.0 / game->ray.ray_dir.y);
 	game->ray.hit = 0;

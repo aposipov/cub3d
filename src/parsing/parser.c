@@ -46,12 +46,9 @@ void	pars_line(char *line, t_all *game)
 	int	i;
 
 	i = 0;
-	if (line[0] == 'N' || line[0] == 'S' ||
-        line[0] == 'W' || line[0] == 'E')
+	if (line[0] == 'N' || line[0] == 'S' || \
+		line[0] == 'W' || line[0] == 'E')
 		pars_walls(line, game);
-//	else if (game->map.north == NULL || game->map.south == NULL ||
-//	game->map.west == NULL || game->map.east == NULL)
-//		ft_error("Error: texture not found!\n");
 	if (line[0] == 'F' || line[0] == 'C')
 		pars_fc(line, game);
 	while (ft_isspace(line[i]))
@@ -70,17 +67,16 @@ void	pars_data(char *path, t_all *game)
 	while (line != NULL)
 	{
 		pars_line(line, game);
-		free(line); //
+		free(line);
 		line = get_next_line(fd);
 		if (line == NULL)
 			break ;
 	}
 	if (game->map.north == NULL || game->map.south == NULL
 		|| game->map.west == NULL || game->map.east == NULL
-		|| game->map.floor == -1 || game->map.ceiling == -1) // на усмотрение
+		|| game->map.floor == -1 || game->map.ceiling == -1)
 		ft_error("Error: NSWE/FC fail\n");
 	check_pl(game);
 	check_map_close(game);
-
 	close(fd);
 }

@@ -31,25 +31,21 @@ void	pre_processing(t_all *game)
 	game->ray.height / 2) * game->wall.step;
 }
 
-int door_texturing(t_all *game, unsigned int *color)
+int	door_texturing(t_all *game, unsigned int *color)
 {
-    if (game->map.map[(int)(game->map.y)][(int)(game->map.x)] == '2')
-    {
-        *color = ((unsigned int *) (game->map.door))
-        [T_HEIGHT * game->wall.tex_y + game->wall.tex_x];
-    }
-    if (game->map.map[(int)(game->map.y)][(int)(game->map.x)] == '3')
-    {
-        *color = ((unsigned int *) (game->map.o_door))
-        [T_HEIGHT * game->wall.tex_y + game->wall.tex_x];
-    }
-    return (*color);
+	if (game->map.map[(int)(game->map.y)][(int)(game->map.x)] == '2')
+	{
+		*color = ((unsigned int *)(game->map.door)) \
+				[T_HEIGHT * game->wall.tex_y + game->wall.tex_x];
+	}
+	return (*color);
 }
 
 int	texturing(t_all *game, unsigned int *color)
 {
-	if (game->ray.side == 0 && game->map.map[(int)(game->map.y)][(int)(game->map.x)] != '2'
-        && game->map.map[(int)(game->map.y)][(int)(game->map.x)] != '3')
+	if (game->ray.side == 0 && \
+		game->map.map[(int)(game->map.y)][(int)(game->map.x)] != '2' && \
+		game->map.map[(int)(game->map.y)][(int)(game->map.x)] != '3')
 	{
 		if (game->ray.ray_dir.x >= 0)
 			*color = ((unsigned int *)(game->map.east))
@@ -58,21 +54,20 @@ int	texturing(t_all *game, unsigned int *color)
 			*color = ((unsigned int *)(game->map.west))
 			[T_HEIGHT * game->wall.tex_y + game->wall.tex_x];
 	}
-	if (game->ray.side == 1 && game->map.map[(int)(game->map.y)][(int)(game->map.x)] != '2'
-        && game->map.map[(int)(game->map.y)][(int)(game->map.x)] != '3')
-    {
-        if (game->ray.ray_dir.y >= 0)
-            *color = ((unsigned int *) (game->map.south))
-            [T_HEIGHT * game->wall.tex_y + game->wall.tex_x];
-        else
-            *color = ((unsigned int *) (game->map.north))
-            [T_HEIGHT * game->wall.tex_y + game->wall.tex_x];
-    }
-    *color = door_texturing(game, color);
-    return (*color);
+	if (game->ray.side == 1 && \
+		game->map.map[(int)(game->map.y)][(int)(game->map.x)] != '2' && \
+		game->map.map[(int)(game->map.y)][(int)(game->map.x)] != '3')
+	{
+		if (game->ray.ray_dir.y >= 0)
+			*color = ((unsigned int *)(game->map.south)) \
+					[T_HEIGHT * game->wall.tex_y + game->wall.tex_x];
+		else
+			*color = ((unsigned int *)(game->map.north)) \
+					[T_HEIGHT * game->wall.tex_y + game->wall.tex_x];
+	}
+	*color = door_texturing(game, color);
+	return (*color);
 }
-
-
 
 void	textures(t_all *game, int x)
 {
