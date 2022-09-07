@@ -107,15 +107,15 @@ char	*get_text_addr(t_all *game, char *line, int index)
 void	pars_walls(char *line, t_all *game)
 {
 	if (ft_strncmp(line, "NO ", 3) == 0 && game->map.north == NULL)
-		game->map.north = get_text_addr(game, line + 3, 1);
+        game->map.north = get_text_addr(game, line + 3, 0);
 	else if (ft_strncmp(line, "SO ", 3) == 0 && game->map.south == NULL)
-		game->map.south = get_text_addr(game, line + 3, 2);
+		game->map.south = get_text_addr(game, line + 3, 1);
 	else if (ft_strncmp(line, "WE ", 3) == 0 && game->map.west == NULL)
-		game->map.west = get_text_addr(game, line + 3, 3);
+		game->map.west = get_text_addr(game, line + 3, 2);
 	else if (ft_strncmp(line, "EA ", 3) == 0 && game->map.east == NULL)
-		game->map.east = get_text_addr(game, line + 3, 4);
-    else if (ft_strncmp(line, "DO ", 3) == 0 && game->map.door == NULL)
-        game->map.door = get_text_addr(game, line + 3, 5);
-//    else if (ft_strncmp(line, "OD ", 3) == 0 && game->map.o_door == NULL)
+		game->map.east = get_text_addr(game, line + 3, 3);
+//  else if (ft_strncmp(line, "DO ", 3) == 0 && game->map.door == NULL)
+//        game->map.door = get_text_addr(game, line + 3, 5);
+//  else if (ft_strncmp(line, "OD ", 3) == 0 && game->map.o_door == NULL)
 //        game->map.o_door = get_text_addr(game, line + 3);
 }

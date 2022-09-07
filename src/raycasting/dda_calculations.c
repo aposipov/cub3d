@@ -53,8 +53,7 @@ void	dda_algo(t_all *game)
 			game->ray.side = 1;
 		}
 		if (game->map.map[(int)(game->map.y)][(int)(game->map.x)] == '1' || \
-            game->map.map[(int)(game->map.y)][(int)(game->map.x)] == '2' || \
-            game->map.map[(int)(game->map.y)][(int)(game->map.x)] == '3')
+            game->map.map[(int)(game->map.y)][(int)(game->map.x)] == '2')
 			game->ray.hit = 1;
 	}
 }

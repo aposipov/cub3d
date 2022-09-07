@@ -56,6 +56,7 @@ int	main(int argc, char **argv)
 		init_mlx(&game);
 		init_hooks(&game);
 		pars_data(argv[1], &game);
+        init_door(&game);
 		draw_intro(&game);
 		mlx_loop_hook(game.mlx, game_start, &game);
 		mlx_loop(game.mlx);

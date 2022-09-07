@@ -27,8 +27,8 @@ int	check_line(char *line, int i)
 {
 	while (line[i])
 	{
-		if (line[i] != '1' && line[i] != '0' && line[i] != '2' && line[i] != '3' && line[i] != 'N' \
-		&& line[i] != 'S' && line[i] != 'W' && line[i] != 'E' && line[i] != 'D' && line[i] != 'O' &&\
+		if (line[i] != '1' && line[i] != '0' && line[i] != '2' && line[i] != '3' &&\
+        line[i] != 'N' && line[i] != 'S' && line[i] != 'W' && line[i] != 'E' &&\
         !ft_isspace(line[i]))
 			return (0);
 		i++;

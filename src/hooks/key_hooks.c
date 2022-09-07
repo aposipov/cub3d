@@ -17,12 +17,12 @@ void	key_hook_a(t_all *game)
     if (game->map.map[(int)(game->pl.pos.y)] \
     [(int)(game->pl.pos.x - game->ray.plane.x * MS)] == '0' ||
         game->map.map[(int)(game->pl.pos.y)] \
-    [(int)(game->pl.pos.x - game->ray.plane.x * MS)] == '4')
+    [(int)(game->pl.pos.x - game->ray.plane.x * MS)] == '3')
         game->pl.pos.x -= game->ray.plane.x * MS;
     if (game->map.map[(int)(game->pl.pos.y - game->ray.plane.y * MS)] \
     [(int)(game->pl.pos.x)] == '0' ||
         game->map.map[(int)(game->pl.pos.y - game->ray.plane.y * MS)] \
-    [(int)(game->pl.pos.x)] == '4')
+    [(int)(game->pl.pos.x)] == '3')
         game->pl.pos.y -= game->ray.plane.y * MS;
 }
 
@@ -31,12 +31,12 @@ void    key_hook_d(t_all *game)
     if (game->map.map[(int)(game->pl.pos.y)] \
 		[(int)(game->pl.pos.x + game->ray.plane.x * MS)] == '0' ||
         game->map.map[(int)(game->pl.pos.y)] \
-		[(int)(game->pl.pos.x + game->ray.plane.x * MS)] == '4')
+		[(int)(game->pl.pos.x + game->ray.plane.x * MS)] == '3')
         game->pl.pos.x += game->ray.plane.x * MS;
     if (game->map.map[(int)(game->pl.pos.y + game->ray.plane.y * MS)] \
 		[(int)(game->pl.pos.x)] == '0' ||
         game->map.map[(int)(game->pl.pos.y + game->ray.plane.y * MS)] \
-		[(int)(game->pl.pos.x)] == '4')
+		[(int)(game->pl.pos.x)] == '3')
         game->pl.pos.y += game->ray.plane.y * MS;
 }
 
@@ -45,12 +45,12 @@ void	key_hook_w(t_all *game)
     if (game->map.map[(int)(game->pl.pos.y)]
         [(int)(game->pl.pos.x + game->pl.dir.x * MS)] == '0' ||
         game->map.map[(int)(game->pl.pos.y)]
-        [(int)(game->pl.pos.x + game->pl.dir.x * MS)] == '4')
+        [(int)(game->pl.pos.x + game->pl.dir.x * MS)] == '3')
         game->pl.pos.x += game->pl.dir.x * MS;
     if (game->map.map[(int)(game->pl.pos.y + game->pl.dir.y * MS)]
         [(int)(game->pl.pos.x)]  == '0' ||
         game->map.map[(int)(game->pl.pos.y + game->pl.dir.y * MS)]
-        [(int)(game->pl.pos.x)]  == '4')
+        [(int)(game->pl.pos.x)]  == '3')
         game->pl.pos.y += game->pl.dir.y * MS;
 }
 
@@ -59,36 +59,36 @@ void key_hook_s(t_all *game)
     if (game->map.map[(int)(game->pl.pos.y)]
         [(int)(game->pl.pos.x - game->pl.dir.x * MS)] == '0' ||
         game->map.map[(int)(game->pl.pos.y)]
-        [(int)(game->pl.pos.x - game->pl.dir.x * MS)] == '4')
+        [(int)(game->pl.pos.x - game->pl.dir.x * MS)] == '3')
         game->pl.pos.x -= game->pl.dir.x * MS;
     if (game->map.map[(int)(game->pl.pos.y - game->pl.dir.y * MS)]
         [(int)(game->pl.pos.x)] == '0' ||
         game->map.map[(int)(game->pl.pos.y - game->pl.dir.y * MS)]
-        [(int)(game->pl.pos.x)] == '4')
+        [(int)(game->pl.pos.x)] == '3')
         game->pl.pos.y -= game->pl.dir.y * MS;
 }
 
 void	open_the_doors(t_all *game)
 {
     if (game->map.map[(int)(game->pl.pos.y)][(int)(game->pl.pos.x + 1)] == '2')
-        game->map.map[(int)(game->pl.pos.y)][(int)(game->pl.pos.x + 1)] = '4';
+        game->map.map[(int)(game->pl.pos.y)][(int)(game->pl.pos.x + 1)] = '3';
     else if (game->map.map[(int)(game->pl.pos.y)][(int)(game->pl.pos.x - 1)] == '2')
-        game->map.map[(int)(game->pl.pos.y)][(int)(game->pl.pos.x - 1)] = '4';
+        game->map.map[(int)(game->pl.pos.y)][(int)(game->pl.pos.x - 1)] = '3';
     else if (game->map.map[(int)(game->pl.pos.y + 1)][(int)(game->pl.pos.x)] == '2')
-        game->map.map[(int)(game->pl.pos.y + 1)][(int)(game->pl.pos.x)] = '4';
+        game->map.map[(int)(game->pl.pos.y + 1)][(int)(game->pl.pos.x)] = '3';
     else if (game->map.map[(int)(game->pl.pos.y - 1)][(int)(game->pl.pos.x)] == '2')
-        game->map.map[(int)(game->pl.pos.y - 1)][(int)(game->pl.pos.x)] = '4';
+        game->map.map[(int)(game->pl.pos.y - 1)][(int)(game->pl.pos.x)] = '3';
     else if (game->map.map[(int)(game->pl.pos.y)][(int)(game->pl.pos.x + 1)]
-	== '4')
+	== '3')
         game->map.map[(int)(game->pl.pos.y)][(int)(game->pl.pos.x + 1)] = '2';
     else if (game->map.map[(int)(game->pl.pos.y)][(int)(game->pl.pos.x - 1)]
-	== '4')
+	== '3')
         game->map.map[(int)(game->pl.pos.y)][(int)(game->pl.pos.x - 1)] = '2';
     else if (game->map.map[(int)(game->pl.pos.y + 1)][(int)(game->pl.pos.x)]
-	== '4')
+	== '3')
         game->map.map[(int)(game->pl.pos.y + 1)][(int)(game->pl.pos.x)] = '2';
     else if (game->map.map[(int)(game->pl.pos.y - 1)][(int)(game->pl.pos.x)]
-	== '4')
+	== '3')
         game->map.map[(int)(game->pl.pos.y - 1)][(int)(game->pl.pos.x)] = '2';
 }
 
@@ -98,11 +98,11 @@ int	exit_hook(t_all *game) // free?
 	free_tmp(game->tmp);
 	mlx_destroy_image(game->mlx, game->intro);
 	mlx_destroy_image(game->mlx, game->img.img);
+	mlx_destroy_image(game->mlx, game->img.img_t[0]);
 	mlx_destroy_image(game->mlx, game->img.img_t[1]);
 	mlx_destroy_image(game->mlx, game->img.img_t[2]);
 	mlx_destroy_image(game->mlx, game->img.img_t[3]);
 	mlx_destroy_image(game->mlx, game->img.img_t[4]);
-	mlx_destroy_image(game->mlx, game->img.img_t[5]);
 	mlx_destroy_window(game->mlx, game->win);
 	mlx_destroy_display(game->mlx);
 	//mlx_clear_window(game->mlx,game->win);

@@ -37,6 +37,18 @@ void	init_data(t_all *game)
     game->map_flag = 0;
 }
 
+void init_door(t_all *game)
+{
+    int x;
+    int y;
+    int i;
+
+    game->img.img_t[4] = mlx_xpm_file_to_image(game->mlx, "./xpm/cl_door.xpm", &x, &y);
+    if (game->img.img_t[4] == NULL || x != T_WIDTH || y != T_HEIGHT)
+        ft_error("Error: wrong xpm file\n");
+    game->map.door = mlx_get_data_addr(game->img.img_t[4], &x, &y, &i);
+}
+
 void init_mlx(t_all *game) // add check
 {
 	game->mlx = mlx_init();

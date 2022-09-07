@@ -59,6 +59,7 @@ void	draw_intro(t_all *game);
 void	draw_mmap(t_all *game);
 void	draw_pixel(t_all *all, int i, int j, int color);
 void	free_tmp(char **arr);
+void    init_door(t_all *game);
 
 void	check_map_close(t_all *game);
 
