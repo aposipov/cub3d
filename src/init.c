@@ -31,6 +31,7 @@ void	init_data(t_all *game)
 	game->pl.pos.y = 0;
 	game->pl.dir.x = 0;
 	game->pl.dir.y = 0;
+    game->pl.mouse_x = W_WIDTH/2;
 	game->ray.plane.x = 0;
 	game->ray.plane.y = 0;
     game->map_flag = 0;
@@ -47,6 +48,7 @@ void init_mlx(t_all *game) // add check
 
 void	init_hooks(t_all *game)
 {
+    mlx_mouse_move(game->mlx, game->win, W_WIDTH/2, W_HEIGHT/2);
 	mlx_hook(game->win, 2, 1L<<0, key_hook, game); // faster?
 	mlx_hook(game->win, 17, 0, exit_hook, game);
     mlx_hook(game->win, 6, 1L<<6, mouse_hook, game);
