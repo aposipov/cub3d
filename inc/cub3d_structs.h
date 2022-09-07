@@ -16,7 +16,7 @@
 typedef struct s_data
 {
 	void	*img;
-	void	*img_t;
+	void	*img_t[6]; // 5 text
 	char	*addr;
 	int		bpp;
 	int		ll;

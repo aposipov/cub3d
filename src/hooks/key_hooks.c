@@ -95,12 +95,22 @@ void	open_the_doors(t_all *game)
 int	exit_hook(t_all *game) // free?
 {
 	printf(GREEN"Exit!\n"NC);
-	//(void)game;
-    mlx_destroy_image(game->mlx, game->img.img);
-    mlx_destroy_window(game->mlx, game->win);
-	//mlx_destroy_image(game->mlx, game->img.img_t);
-//    free_tmp(game->img.img_t);
-	//free(game->img.img_t);
+	free_tmp(game->tmp);
+	mlx_destroy_image(game->mlx, game->intro);
+	mlx_destroy_image(game->mlx, game->img.img);
+	mlx_destroy_image(game->mlx, game->img.img_t[1]);
+	mlx_destroy_image(game->mlx, game->img.img_t[2]);
+	mlx_destroy_image(game->mlx, game->img.img_t[3]);
+	mlx_destroy_image(game->mlx, game->img.img_t[4]);
+	mlx_destroy_image(game->mlx, game->img.img_t[5]);
+	mlx_destroy_window(game->mlx, game->win);
+	mlx_destroy_display(game->mlx);
+	//mlx_clear_window(game->mlx,game->win);
+	free(game->mlx);
+	//free(game->win);
+	//free(game->map.north);
+	//free(game->img.addr);
+
 	exit(0);
 }
 

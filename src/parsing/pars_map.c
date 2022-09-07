@@ -77,7 +77,6 @@ void	pars_map(char *line, int i, t_all *game)
 	game->map.map = game->tmp;
 	printf("map = %s\n", game->map.map[h]); //
 	free(line); // del n
-	//free_tmp (tmp);
 }
 // check position
 // check map close
