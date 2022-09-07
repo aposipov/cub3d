@@ -36,8 +36,7 @@ void	key_hook_lr(int key, t_all *game)
 int	mouse_hook(int x, int y, t_all *all)
 {
     (void) y;
-
-    mlx_mouse_hide(all->mlx, all->win);// если хочешь расскоменти, но мне кажется для наглядности лучше оставить курсор так
+    //mlx_mouse_hide(all->mlx, all->win);// если хочешь расскоменти, но мне кажется для наглядности лучше оставить курсор так
     //if (x < 0 || x > W_WIDTH)
     //mlx_mouse_move(all->mlx, all->win, W_WIDTH / 2, W_HEIGHT / 2); // Не понимаю зачем здесь это условие, мы не можем выйти за границы x из-за статичных размеров окна
     if (x > all->pl.mouse_x)

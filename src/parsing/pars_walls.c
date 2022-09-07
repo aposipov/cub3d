@@ -65,10 +65,15 @@ char	*del_n(char *line)
 	char	*tmp = NULL;
 
 	i = 0;
-	len = (int)ft_strlen(line);
-	if (line[len] != '\n')
-		line[len + 1] = '\n';
-	tmp = malloc (sizeof(char) * len + 1); // add + 1
+	len = (int)ft_strlen(line);// 13
+    printf("string line %s = %d\n", line, len);
+	if (line[len-1] != '\n')
+    {
+        line[len + 1] = '\n';
+//      line[len + 2] = '\0';
+        len = len + 2;
+    }
+    tmp = malloc (sizeof(char) * len); // add + 1
 	if (!tmp)
 		ft_error("Error: del_n malloc\n");
 	while (line[i] != '\n')
@@ -77,6 +82,7 @@ char	*del_n(char *line)
 		i++;
 	}
 	tmp[i] = '\0';
+    printf("string tmpp %s = %d\n", tmp, (int)ft_strlen(tmp));
 	return (tmp);
 }
 
