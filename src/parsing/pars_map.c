@@ -23,20 +23,6 @@ void	free_tmp(char **arr)
 	tmp = NULL;
 }
 
-//void	free_tmp(char **arr)
-//{
-//	int	i;
-//
-//	i = 0;
-//	if (arr)
-//	{
-//		while (arr[i])
-//			free(arr[i++]);
-//		free(arr);
-//		arr = NULL;
-//	}
-//}
-
 int	check_line(char *line, int i)
 {
 	while (line[i])

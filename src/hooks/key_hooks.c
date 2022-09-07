@@ -110,7 +110,6 @@ int	exit_hook(t_all *game) // free?
 	//free(game->win);
 	//free(game->map.north);
 	//free(game->img.addr);
-
 	exit(0);
 }
 
