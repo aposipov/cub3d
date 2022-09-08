@@ -97,6 +97,9 @@ char	*get_text_addr(t_all *game, char *line, int index)
 
 void	pars_walls(char *line, t_all *game)
 {
+	//int i = 0;
+	//while (ft_isspace(*(line++)))
+		//*line++;
 	if (ft_strncmp(line, "NO ", 3) == 0 && game->map.north == NULL)
 		game->map.north = get_text_addr(game, line + 3, 0);
 	else if (ft_strncmp(line, "SO ", 3) == 0 && game->map.south == NULL)

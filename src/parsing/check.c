@@ -15,22 +15,22 @@
 void	check_position(t_all *game, int i, int j)
 {
 	if (i == 0 || j == 0)
-		ft_error("Error: invalid map\n");
+		ft_error("Error: invalid map 1\n");
 	if (!(game->map.map[i - 1][j]) || !(game->map.map[i][j - 1])
 		|| !(game->map.map[i + 1][j]) || !(game->map.map[i][j + 1]))
-		ft_error("Error: invalid map\n");
+		ft_error("Error: invalid map 2\n");
 	if (game->map.map[i - 1][j] != '1' && game->map.map[i - 1][j] != '0' &&
 		game->map.map[i - 1][j] != '2' && game->map.map[i - 1][j] != '3')
-		ft_error("Error: invalid map\n");
+		ft_error("Error: invalid map 3\n");
 	if (game->map.map[i][j - 1] != '1' && game->map.map[i][j - 1] != '0' &&
 		game->map.map[i][j - 1] != '2' && game->map.map[i][j - 1] != '3')
-		ft_error("Error: invalid map\n");
+		ft_error("Error: invalid map 4\n");
 	if (game->map.map[i + 1][j] != '1' && game->map.map[i + 1][j] != '0' &&
 		game->map.map[i + 1][j] != '2' && game->map.map[i + 1][j] != '3')
-		ft_error("Error: invalid map\n");
+		ft_error("Error: invalid map 5\n");
 	if (game->map.map[i][j + 1] != '1' && game->map.map[i][j + 1] != '0' &&
 		game->map.map[i][j + 1] != '2' && game->map.map[i][j + 1] != '3')
-		ft_error("Error: invalid map\n");
+		ft_error("Error: invalid map 6\n");
 }
 
 void	check_map_close(t_all *game)

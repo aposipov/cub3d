@@ -33,7 +33,7 @@ RED= \033[4;31m
 GREEN= \033[0;32m
 NC= \033[0;0m
 
-.PHONY:	all clean fclean re norm
+.PHONY:	all clean fclean re norm test
 
 all:		$(LIBFT_A) $(NAME)
 
@@ -62,3 +62,6 @@ re:			fclean all
 norm:
 			@norminette libft/ $(HEADER) $(SRC)
 			@echo -e "$(GREEN)\t\n Norminette is OK!\n $(NC)"
+
+test:
+			./test.sh
