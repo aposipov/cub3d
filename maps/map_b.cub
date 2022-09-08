@@ -1,10 +1,10 @@
-NO ./xpm/no.xpm
-SO ./xpm/so.xpm
+    NO ./xpm/no.xpm
+    SO ./xpm/so.xpm
 WE ./xpm/we.xpm
 EA ./xpm/ea.xpm
 
-F 33,33,99
-C 12,12,12
+  F 33,33,99
+            C 12,12,12
 
 1111111111111111111111111
 1000000000000000000000001

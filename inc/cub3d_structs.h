@@ -36,20 +36,20 @@ typedef struct s_map
 	int		ceiling;
 	int		x;
 	int		y;
-}			t_map;
+}	t_map;
 
 typedef struct s_point
 {
 	double	x;
 	double	y;
-}			t_point;
+}	t_point;
 
 typedef struct s_pl
 {
 	t_point	pos;
 	t_point	dir;
 	int		mouse_x;
-}			t_pl;
+}	t_pl;
 
 typedef struct s_ray
 {
@@ -66,7 +66,7 @@ typedef struct s_ray
 	int		height;
 	int		start;
 	int		end;
-}			t_ray;
+}	t_ray;
 
 typedef struct s_wall
 {
@@ -74,7 +74,7 @@ typedef struct s_wall
 	int		tex_y;
 	double	tex_pos;
 	double	step;
-}			t_wall;
+}	t_wall;
 
 typedef struct s_all
 {

@@ -57,7 +57,7 @@ void	pars_map(char *line, int i, t_all *game)
 	{
 		game->tmp[h] = NULL;
 		free(game->tmp);
-		ft_error("Error: invalid map\n");
+		ft_error("Error: invalid map (pars_map)\n");
 	}
 	if (game->map.height > 1)
 		free_tmp(game->map.map);

@@ -97,9 +97,6 @@ char	*get_text_addr(t_all *game, char *line, int index)
 
 void	pars_walls(char *line, t_all *game)
 {
-	//int i = 0;
-	//while (ft_isspace(*(line++)))
-		//*line++;
 	if (ft_strncmp(line, "NO ", 3) == 0 && game->map.north == NULL)
 		game->map.north = get_text_addr(game, line + 3, 0);
 	else if (ft_strncmp(line, "SO ", 3) == 0 && game->map.south == NULL)
@@ -108,4 +105,6 @@ void	pars_walls(char *line, t_all *game)
 		game->map.west = get_text_addr(game, line + 3, 2);
 	else if (ft_strncmp(line, "EA ", 3) == 0 && game->map.east == NULL)
 		game->map.east = get_text_addr(game, line + 3, 3);
+	else
+		ft_error("Error: texture more than one\n");
 }
