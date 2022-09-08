@@ -16,7 +16,7 @@
 typedef struct s_data
 {
 	void	*img;
-	void	*img_t[6]; // 5 text
+	void	*img_t[5];
 	char	*addr;
 	int		bpp;
 	int		ll;
@@ -31,27 +31,24 @@ typedef struct s_map
 	char	*south;
 	char	*west;
 	char	*east;
-    char    *door;
-    char    *o_door;
+	char	*door;
 	int		floor;
 	int		ceiling;
 	int		x;
 	int		y;
-    int     n_sprites;
 }			t_map;
 
 typedef struct s_point
 {
 	double	x;
 	double	y;
-    int		color;
 }			t_point;
 
 typedef struct s_pl
 {
 	t_point	pos;
 	t_point	dir;
-    int     mouse_x;
+	int		mouse_x;
 }			t_pl;
 
 typedef struct s_ray
@@ -79,31 +76,20 @@ typedef struct s_wall
 	double	step;
 }			t_wall;
 
-typedef struct	s_sprite
-{
-    t_point		*pos;
-    double		angle;
-    double		angle_dif;
-    double		dist;
-    int			height;
-    int			width;
-}				t_sprite;
-
 typedef struct s_all
 {
-	void	    *mlx;
-	void	    *win;
-	void	    *intro;
-	int		    intro_w;
-	int		    intro_h;
-    int         map_flag;
+	void		*mlx;
+	void		*win;
+	void		*intro;
+	int			intro_w;
+	int			intro_h;
+	int			map_flag;
 	char		**tmp;
-	t_data	    img;
-	t_map	    map;
-	t_pl	    pl;
-	t_ray	    ray;
-	t_wall	    wall;
-    t_sprite    *sprite;
+	t_data		img;
+	t_map		map;
+	t_pl		pl;
+	t_ray		ray;
+	t_wall		wall;
 }	t_all;
 
 #endif

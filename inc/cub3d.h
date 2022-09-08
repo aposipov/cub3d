@@ -43,13 +43,14 @@ void	init_raycast(t_all *game, int x);
 
 /*hooks*/
 int		key_hook(int key, t_all *game);
-int     mouse_hook(int x, int y, t_all *all);
+int		mouse_hook(int x, int y, t_all *all);
 int		exit_hook(t_all *game);
-void	key_hook_lr(int key, t_all *game);
 void	key_hook_w(t_all *game);
 void	key_hook_a(t_all *game);
 void	key_hook_s(t_all *game);
 void	key_hook_d(t_all *game);
+void	key_hook_l(t_all *game);
+void	key_hook_r(t_all *game);
 
 /*util*/
 void	ft_error(char *str);
@@ -59,6 +60,7 @@ void	draw_intro(t_all *game);
 void	draw_mmap(t_all *game);
 void	draw_pixel(t_all *all, int i, int j, int color);
 void	free_tmp(char **arr);
+void	init_door(t_all *game);
 
 void	check_map_close(t_all *game);
 
