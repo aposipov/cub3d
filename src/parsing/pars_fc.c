@@ -67,5 +67,5 @@ void	pars_fc(char *line, t_all *game)
 		//printf("cl = %d\n", game->map.ceiling);
 	}
 	else
-		ft_error("Error: color F/C not found\n");
+		ft_error("Error: color F/C not found or F/C more than one\n");
 }

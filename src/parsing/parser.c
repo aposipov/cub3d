@@ -46,7 +46,7 @@ void	pars_line(char *line, t_all *game)
 	int	i;
 
 	i = 0;
-	while(ft_isspace(*line))
+	while (ft_isspace(*line))
 		line++;
 	if (*line == 'N' || *line == 'S' || \
 		*line == 'W' || *line == 'E')
