@@ -43,6 +43,8 @@ void	draw_mmap(t_all *game)
 		{
 			if (game->map.map[i][j] == '1')
 				draw_pixel(game, i, j, 0xEEEEEE);
+			else if (game->map.map[i][j] == '2')
+				draw_pixel(game, i, j, 0x27CE06);
 			else
 			{
 				j++;
@@ -52,5 +54,5 @@ void	draw_mmap(t_all *game)
 		}
 		i++;
 	}
-	draw_pixel(game, game->pl.pos.y, game->pl.pos.x, 0x27CE06);
+	draw_pixel(game, game->pl.pos.y, game->pl.pos.x, 0x0000FF);
 }
