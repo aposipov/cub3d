@@ -82,13 +82,13 @@ char	*get_text_addr(t_all *game, char *line, int index)
 {
 	char	*tmp;
 
-	printf("path = %s\n", line);
+	//printf("path = %s\n", line); //
 	while (ft_isspace(*line))
 		line++;
-	printf("path2 = %s\n", line);
-	if (line[0] == '.' && line[1] == '/')
+	//printf("path2 = %s\n", line); //
+	if (line[0] == '.' && line[1] == '/') //   && line[2] == '/')
 	{
-		printf("loop path = %s\n", line);
+		//printf("loop path = %s\n", line);
 		tmp = del_n(line);
 		return (addr_to_path(game, tmp, index));
 	}

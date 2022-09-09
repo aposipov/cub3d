@@ -1,0 +1,9 @@
+NO ./xpm/no.xpm
+SO ./xpm/so.xpm
+WE ./xpm/we.xpm
+EA ./xpm/ea.xpm
+
+F 220,100,100
+C 225,30,0
+
+0

@@ -46,6 +46,10 @@ void	pars_line(char *line, t_all *game)
 	int	i;
 
 	i = 0;
+	while (ft_isspace(line[i]))
+		i++;
+	if (line[i] == '1' || line[i] == '0')
+		pars_map(line, i, game);
 	while (ft_isspace(*line))
 		line++;
 	if (*line == 'N' || *line == 'S' || \
@@ -53,10 +57,10 @@ void	pars_line(char *line, t_all *game)
 		pars_walls(line, game);
 	if (line[0] == 'F' || line[0] == 'C')
 		pars_fc(line, game);
-	while (ft_isspace(line[i]))
-		i++;
-	if (line[i] == '1' || line[i] == '0')
-		pars_map(line, i, game);
+//	while (ft_isspace(line[i]))
+//		i++;
+//	if (line[i] == '1' || line[i] == '0')
+//		pars_map(line, i, game);
 }
 
 void	pars_data(char *path, t_all *game)

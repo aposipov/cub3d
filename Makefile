@@ -63,5 +63,5 @@ norm:
 			@norminette libft/ $(HEADER) $(SRC)
 			@echo -e "$(GREEN)\t\n Norminette is OK!\n $(NC)"
 
-test:
-			./test.sh
+test:		all
+			@./test/test.sh
