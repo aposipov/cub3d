@@ -15,6 +15,7 @@ LIBFT_A = 	libft/libft.a
 CC = 		gcc
 WFLAGS = 	-Wall -Wextra -Werror
 MLXFLAG =	-lmlx -lX11 -lXext -lm
+MACFLAG =	-lmlx -framework OpenGL -framework AppKit
 INCFLAG = 	-I ./inc/ -I ./libft/inc
 HEADER = 	./inc/
 
