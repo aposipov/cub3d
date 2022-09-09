@@ -58,13 +58,11 @@ void	pars_fc(char *line, t_all *game)
 	{
 		check_comma(line);
 		game->map.floor = rgb(line);
-		//printf("fl = %d\n", game->map.floor);
 	}
 	else if ((ft_strncmp(line, "C ", 2) == 0) && game->map.ceiling == -1)
 	{
 		check_comma(line);
 		game->map.ceiling = rgb(line);
-		//printf("cl = %d\n", game->map.ceiling);
 	}
 	else
 		ft_error("Error: color F/C not found or F/C more than one\n");
